@@ -1,7 +1,8 @@
 import torch, transformers, json, asyncio, sys, re
 from TTS.api import TTS
-from IPython.display import Audio
 import whisper
+import pyaudio
+import wave
 torch.set_default_device("cuda:0")
 
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to("cuda")
@@ -19,6 +20,22 @@ model = transformers.AutoModelForCausalLM.from_pretrained(
     quantization_config=bnb_config,
     device_map="auto"
 )
+
+def play_audio(file_path):
+    chunk = 1024
+    wf = wave.open(file_path, 'rb')
+    p = pyaudio.PyAudio()
+    stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
+                    channels=wf.getnchannels(),
+                    rate=wf.getframerate(),
+                    output=True)
+    data = wf.readframes(chunk)
+    while data:
+        stream.write(data)
+        data = wf.readframes(chunk)
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
 
 def answer_text(history):
 
@@ -49,7 +66,7 @@ def answer_text(history):
                     language="pt",
                     speed=1.5,  # Aumenta a velocidade em 50%
             )
-            display(Audio(f"audio_{count}.wav", autoplay=True))
+            play_audio(f"audio_{count}.wav")
             buffer = ""  # Reseta o buffer para a próxima frase
             count += 1
         else:
