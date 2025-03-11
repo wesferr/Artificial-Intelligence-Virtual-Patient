@@ -1,8 +1,10 @@
 import torch, transformers, json, asyncio, sys, re
 from TTS.api import TTS
 import whisper
-import pyaudio
+import pygame
 import wave
+import io
+
 torch.set_default_device("cuda:0")
 
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to("cuda")
@@ -21,25 +23,26 @@ model = transformers.AutoModelForCausalLM.from_pretrained(
     device_map="auto"
 )
 
-def play_audio(file_path):
-    chunk = 1024
-    wf = wave.open(file_path, 'rb')
-    p = pyaudio.PyAudio()
-    stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
-                    channels=wf.getnchannels(),
-                    rate=wf.getframerate(),
-                    output=True)
-    data = wf.readframes(chunk)
-    while data:
-        stream.write(data)
-        data = wf.readframes(chunk)
-    stream.stop_stream()
-    stream.close()
-    p.terminate()
+pygame.mixer.init()
 
-def answer_text(history):
+async def play_audio(queue):
+    while True:
+        audio_data = await queue.get()
+        if audio_data is None:
+            break
+        pygame.mixer.music.load(io.BytesIO(audio_data))
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy():
+            await asyncio.sleep(0.01)
 
-    result = asrmodel.transcribe("paris.wav", language="pt")
+async def generate_audio(text):
+    audio_buffer = io.BytesIO()
+    await asyncio.to_thread(tts.tts_to_file, text=text, file_path=audio_buffer, speaker_wav="audio/minhavoz.wav", language="pt", speed=1)
+    audio_buffer.seek(0)
+    return audio_buffer.read()
+
+async def answer_text(history, queue):
+    result = asrmodel.transcribe("audio/paris.wav", language="pt")
     print(result["text"])
     history.append(result["text"])
 
@@ -59,14 +62,9 @@ def answer_text(history):
 
         ends_with_number = bool(re.fullmatch(r"^[a-zA-Z\s]+[0-9]+\.$", buffer))
         if ("." in token or "," in token) and not ends_with_number:  # Se o token contém um ponto final
-            tts.tts_to_file(
-                    text=buffer,
-                    file_path=f"audio_{count}.wav",
-                    speaker_wav="minhavoz.wav",
-                    language="pt",
-                    speed=1.5,  # Aumenta a velocidade em 50%
-            )
-            play_audio(f"audio_{count}.wav")
+            audio_data = await generate_audio(buffer)
+            print(buffer)
+            await queue.put(audio_data)
             buffer = ""  # Reseta o buffer para a próxima frase
             count += 1
         else:
@@ -78,11 +76,18 @@ def answer_text(history):
         if new_token.item() == tokenizer.eos_token_id:
             break
 
+    await queue.put(None)  # Sinaliza para a tarefa de reprodução de áudio que terminou
+
     return tokenizer.decode(generated[0])
 
-background = [
-    "responda em uma unica sentença:",
-    "me fale sobre paris"
-]
+async def main():
+    queue = asyncio.Queue()
+    background = [
+        "responda em uma unica sentença:",
+        "me fale sobre paris"
+    ]
+    play_task = asyncio.create_task(play_audio(queue))
+    await answer_text(background, queue)
+    await play_task
 
-answer_text(background)
+asyncio.run(main())
