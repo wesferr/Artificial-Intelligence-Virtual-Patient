@@ -1,14 +1,23 @@
 import torch, transformers, json, asyncio, sys, re
+import torchaudio
 from TTS.api import TTS
 import whisper
-import pygame
 import wave
 import io
+import numpy as np
+import tempfile
+import soundfile as sf
 
 torch.set_default_device("cuda:0")
 
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to("cuda")
-asrmodel = whisper.load_model("medium").to("cuda")
+# asrmodel = whisper.load_model("small").to("cuda")
+transcribe = transformers.pipeline(
+    task="automatic-speech-recognition",
+    model="jlondonobo/whisper-medium-pt",
+    chunk_length_s=30,
+    device_map="auto",
+)
 
 model_name = "microsoft/Phi-4-mini-instruct"
 tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
@@ -23,7 +32,34 @@ model = transformers.AutoModelForCausalLM.from_pretrained(
     device_map="auto"
 )
 
-pygame.mixer.init()
+def convert_wav_bytes_to_numpy(wav_bytes, target_sr=16000):
+    """Lê um arquivo WAV em bytes, converte para tensor, faz resampling para 16kHz e normaliza."""
+    wav_io = io.BytesIO(wav_bytes)
+
+    try:
+        # Carregar áudio a partir dos bytes
+        waveform, sample_rate = torchaudio.load(wav_io, normalize=True)
+
+        # Converter para mono se for estéreo
+        if waveform.shape[0] > 1:
+            waveform = torch.mean(waveform, dim=0, keepdim=True)
+
+        # Fazer resampling para 16kHz, se necessário
+        if sample_rate != target_sr:
+            transform = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=target_sr)
+            waveform = transform(waveform)
+            sample_rate = target_sr
+
+        # Normalizar o áudio para -1 a 1
+        waveform = waveform / waveform.abs().max()
+
+        # Converter para NumPy e remover dimensão extra
+        audio_np = waveform.squeeze(0).numpy()
+
+        return audio_np, sample_rate
+
+    except Exception as e:
+        raise ValueError(f"Erro ao processar o arquivo WAV: {e}")
 
 async def play_audio(queue):
     while True:
@@ -41,8 +77,10 @@ async def generate_audio(text):
     audio_buffer.seek(0)
     return audio_buffer.read()
 
-async def answer_text(history, queue):
-    result = asrmodel.transcribe("audio/paris.wav", language="pt")
+async def answer_text(history, audio_data, queue):
+
+    audionp, sr = convert_wav_bytes_to_numpy(audio_data)
+    result = transcribe(audionp)
     print(result["text"])
     history.append(result["text"])
 
@@ -51,12 +89,15 @@ async def answer_text(history, queue):
     generated = inputs
     count = 0
     for _ in range(1000):
-        output = model.generate(
-            generated,
-            max_new_tokens=1,
-            top_k=50,
-            pad_token_id=tokenizer.eos_token_id,
-        )
+        output = None
+        with torch.no_grad():
+            output = model.generate(
+                generated,
+                max_new_tokens=1,
+                top_k=50,
+                pad_token_id=tokenizer.eos_token_id,
+            )
+        torch.cuda.empty_cache()
         new_token = output[:, -1].unsqueeze(0)
         token = tokenizer.decode(new_token[0], skip_special_tokens=True)
 
@@ -81,13 +122,11 @@ async def answer_text(history, queue):
     return tokenizer.decode(generated[0])
 
 async def main():
+    audio_data = open("audio/paris.wav", "rb").read()
     queue = asyncio.Queue()
-    background = [
-        "responda em uma unica sentença:",
-        "me fale sobre paris"
-    ]
+    background = ["responda em uma unica sentença, sem exemplos:",]
     play_task = asyncio.create_task(play_audio(queue))
-    await answer_text(background, queue)
+    await answer_text(background, audio_data, queue)
     await play_task
 
-asyncio.run(main())
+# asyncio.run(main())

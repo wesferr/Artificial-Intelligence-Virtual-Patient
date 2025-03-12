@@ -13,13 +13,13 @@ if platform.system()=='Windows':
 # Configuração de áudio
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
-RATE = 44100
+RATE = 48000
 CHUNK = 1024
 OUTPUT_FILENAME = "audio_recorded.wav"
 
 class AudioRecorder:
     def __init__(self, master):
-        self.server_uri = "ws://localhost:8765/audio"
+        self.server_uri = "ws://localhost:8765/oz"
         self.master = master
         self.master.title("Gravador de Áudio")
         self.audio_queue = asyncio.Queue()
@@ -56,7 +56,7 @@ class AudioRecorder:
     async def connect(self):
         """Estabelece conexão com o servidor WebSocket."""
         try:
-            self.websocket = await websockets.connect(self.server_uri)
+            self.websocket = await websockets.connect(self.server_uri, ping_interval=20, ping_timeout=20)
         except Exception as e:
             print(f"Erro ao conectar ao WebSocket: {e}")
 
@@ -120,7 +120,7 @@ class AudioRecorder:
         stream = p.open(
             format=pyaudio.paInt16,
             channels=1,
-            rate=44100,
+            rate=RATE,
             output=True
         )
 
