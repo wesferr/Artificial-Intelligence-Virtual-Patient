@@ -7,6 +7,9 @@ import io
 import numpy as np
 import tempfile
 import soundfile as sf
+import pygame
+
+pygame.mixer.init()
 
 torch.set_default_device("cuda:0")
 
@@ -128,6 +131,9 @@ async def main():
     background = ["responda em uma unica sentença, sem exemplos:",]
     play_task = asyncio.create_task(play_audio(queue))
     background = await answer_text(background, audio_data, queue)
+    print(background)
     await play_task
 
-# asyncio.run(main())
+
+if __name__ == "__main__":
+    asyncio.run(main())

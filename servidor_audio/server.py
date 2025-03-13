@@ -11,7 +11,7 @@ async def play_audio(queue, websocket):
         audio_data = await queue.get()
         if audio_data is None:
             break
-        await asyncio.gather(*(client.send(audio_data) for client in clients if client != websocket))
+        await asyncio.gather(*(client.send(audio_data) for client in clients))
 
 async def handler(websocket):
     # Adiciona cliente à lista
@@ -23,9 +23,9 @@ async def handler(websocket):
             if request.path == "/oz":
                 await asyncio.gather(*(client.send(message) for client in clients if client != websocket))
             if request.path == "/ai":
-                # queue = asyncio.Queue()
-                # play_task = asyncio.create_task(play_audio(queue, websocket))
-                # await chatbot.answer_text(background, message, queue)
+                queue = asyncio.Queue()
+                play_task = asyncio.create_task(play_audio(queue, websocket))
+                background = await chatbot.answer_text(background, message, queue)
                 pass
     except websockets.exceptions.ConnectionClosed as e:
         print(e)
