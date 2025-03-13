@@ -106,6 +106,7 @@ async def answer_text(history, audio_data, queue):
             audio_data = await generate_audio(buffer)
             print(buffer)
             await queue.put(audio_data)
+            history.append(buffer)
             buffer = ""  # Reseta o buffer para a próxima frase
             count += 1
         else:
@@ -119,14 +120,14 @@ async def answer_text(history, audio_data, queue):
 
     await queue.put(None)  # Sinaliza para a tarefa de reprodução de áudio que terminou
 
-    return tokenizer.decode(generated[0])
+    return history
 
 async def main():
     audio_data = open("audio/paris.wav", "rb").read()
     queue = asyncio.Queue()
     background = ["responda em uma unica sentença, sem exemplos:",]
     play_task = asyncio.create_task(play_audio(queue))
-    await answer_text(background, audio_data, queue)
+    background = await answer_text(background, audio_data, queue)
     await play_task
 
 # asyncio.run(main())
