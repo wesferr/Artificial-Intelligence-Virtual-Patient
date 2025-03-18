@@ -9,18 +9,8 @@ import tempfile
 import soundfile as sf
 import pygame
 
-pygame.mixer.init()
 
 torch.set_default_device("cuda:0")
-
-tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to("cuda")
-# asrmodel = whisper.load_model("small").to("cuda")
-transcribe = transformers.pipeline(
-    task="automatic-speech-recognition",
-    model="jlondonobo/whisper-medium-pt",
-    chunk_length_s=30,
-    device_map="auto",
-)
 
 model_name = "microsoft/Phi-4-mini-instruct"
 tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
@@ -34,6 +24,16 @@ model = transformers.AutoModelForCausalLM.from_pretrained(
     quantization_config=bnb_config,
     device_map="auto"
 )
+
+tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to("cuda")
+# asrmodel = whisper.load_model("small").to("cuda")
+transcribe = transformers.pipeline(
+    task="automatic-speech-recognition",
+    model="jlondonobo/whisper-medium-pt",
+    chunk_length_s=30,
+    device_map="auto",
+)
+
 
 def convert_wav_bytes_to_numpy(wav_bytes, target_sr=16000):
     """Lê um arquivo WAV em bytes, converte para tensor, faz resampling para 16kHz e normaliza."""
@@ -84,13 +84,14 @@ async def answer_text(history, audio_data, queue):
 
     audionp, sr = convert_wav_bytes_to_numpy(audio_data)
     result = transcribe(audionp)
-    print(result["text"])
-    history.append(result["text"])
+    text_result = result["text"]
+    print(text_result)
+    history += f"<|user|>{text_result}<|end|><|assistant|>"
 
     buffer = ""
-    inputs = tokenizer("\n".join(history), return_tensors="pt", truncation=True).input_ids
-    generated = inputs
-    count = 0
+    generated = tokenizer(history, return_tensors="pt", truncation=True).input_ids
+    print(tokenizer.decode(generated[0], skip_special_tokens=True))
+
     for _ in range(1000):
         output = None
         with torch.no_grad():
@@ -99,36 +100,35 @@ async def answer_text(history, audio_data, queue):
                 max_new_tokens=1,
                 top_k=50,
                 pad_token_id=tokenizer.eos_token_id,
+                eos_token_id=tokenizer.eos_token_id,
             )
         torch.cuda.empty_cache()
         new_token = output[:, -1].unsqueeze(0)
-        token = tokenizer.decode(new_token[0], skip_special_tokens=True)
-
+        token = tokenizer.decode(new_token[0], skip_special_tokens=False)
         ends_with_number = bool(re.fullmatch(r"^[a-zA-Z\s]+[0-9]+\.$", buffer))
         if ("." in token or "," in token) and not ends_with_number:  # Se o token contém um ponto final
             audio_data = await generate_audio(buffer)
-            print(buffer)
             await queue.put(audio_data)
-            history.append(buffer)
+            print(buffer)
             buffer = ""  # Reseta o buffer para a próxima frase
-            count += 1
         else:
             buffer += token
 
         generated = torch.cat([generated, new_token], dim=1)
 
         # Parar se encontrar EOS
-        if new_token.item() == tokenizer.eos_token_id:
+        if new_token.item() == tokenizer.eos_token_id or token == "<|end|>":
             break
 
     await queue.put(None)  # Sinaliza para a tarefa de reprodução de áudio que terminou
 
-    return history
+    return tokenizer.decode(generated[0], skip_special_tokens=False)
 
 async def main():
+    pygame.mixer.init()
     audio_data = open("audio/paris.wav", "rb").read()
     queue = asyncio.Queue()
-    background = ["responda em uma unica sentença, sem exemplos:",]
+    background = ["<|system|>você é uma ia de conversa, voce sempre responde em uma unica sentença<|end|>",]
     play_task = asyncio.create_task(play_audio(queue))
     background = await answer_text(background, audio_data, queue)
     print(background)

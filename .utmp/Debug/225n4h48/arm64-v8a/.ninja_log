@@ -1,0 +1,10 @@
+# ninja log v5
+13	807	7640038367223587	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	2e6769df13506033
+0	810	7640038367223587	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	bd20758c96113584
+20	830	7640038367459131	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	7b52c8fc234719eb
+26	833	7640038367515130	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	e28811532646d4f8
+3	850	7640038367734687	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f7dbf6bea272685
+16	887	7640038368089623	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	c31739b642477b87
+10	892	7640038368134966	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	e37a3621fe1c4d1b
+7	919	7640038368409389	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	d142e75646c7de84
+919	1026	7640038369496551	C:/Users/wesley/Documents/AIVH/Library/PramData/AndroidApplicationController/Cache/com.Convai.ConvaiVR/gradle-project/unityLibrary/build/intermediates/cxx/Debug/225n4h48/obj/arm64-v8a/libgame.so	f04db938ddb507c7

@@ -1,0 +1,2 @@
+C:\Users\wesley\Documents\AIVH\Library\PramData\AndroidApplicationController\Cache\com.Convai.ConvaiVR\gradle-project\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\wesley\Documents\AIVH\Library\PramData\AndroidApplicationController\Cache\com.Convai.ConvaiVR\gradle-project\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

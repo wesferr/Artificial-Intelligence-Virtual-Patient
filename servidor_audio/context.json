@@ -1,0 +1,194 @@
+{
+	"uuid": "8c91c078-5ec4-473d-9a70-3f3e9120b75c",
+	"cenario": "Emergência",
+	"descricao": "Helena, 8 anos, 1,32cm e 25kg. Queda de bicicleta, com falta de ar e dor torácica, sangramento em joelho direito e cotovelo esquerdo, classificada na cor amarela pelo protocolo de Manchester.",
+	"paciente": {
+		"uuid": "5f586e7f-1047-44e3-af27-727d497a0fb4",
+		"nome": "helena",
+		"idade": 10,
+		"faixa_etaria": "Criança",
+		"sexo": "Feminino"
+	},
+	"acompanhante": {
+		"uuid": "4ca5cb02-5d8a-41c1-88f3-9c4c8b00c047",
+		"nome": "Assistente Social",
+		"afiliacao": "Responsável Legal",
+		"sexo": "Masculino"
+	},
+	"sinais_vitais": {
+		"temperatura": 36.0,
+		"frequencia_cardiaca": 100.0,
+		"pressao_sistolica": 110.0,
+		"pressao_diastolica": 70.0,
+		"saturacao_oxigenio": 97.0,
+		"frequencia_respiratoria": 25.0
+	},
+	"diagnostico_lista": [
+		{
+			"uuid": "b114bdac-edee-4c10-a6c2-88d7598535ba",
+			"nome": "Pneumotórax não hipertensivo",
+			"cid": "J19",
+			"peso": 1.0
+		},
+		{
+			"uuid": "c546a83a-cad7-4770-8b58-2608dacdedd1",
+			"nome": "Pneumonia",
+			"cid": "J12",
+			"peso": 0.0
+		},
+		{
+			"uuid": "04029ab7-11ea-486c-812a-fe6ab53fce5d",
+			"nome": "Pneumotórax Hipertensivo",
+			"cid": "J19.1",
+			"peso": 0.0
+		},
+		{
+			"uuid": "de32de62-8306-4022-a1d1-4fee8f646d07",
+			"nome": "Hemotórax",
+			"cid": "J94",
+			"peso": -1.0
+		}
+	],
+	"tratamento_lista": [
+		{
+			"uuid": "96950325-d9b3-45c1-ab75-d8c88a80012c",
+			"nome": "Internação",
+			"posologia": "Imediata",
+			"peso": 0.0
+		},
+		{
+			"uuid": "e0da0990-1f57-4249-84f0-c070c644bf60",
+			"nome": "Avaliação Cirurgião",
+			"posologia": "Imediata",
+			"peso": 1.0
+		},
+		{
+			"uuid": "4763349e-868c-4a47-8ac7-71e881d97903",
+			"nome": "Dipirona",
+			"posologia": "400mg 3x dia",
+			"peso": -2.0
+		}
+	],
+	"perguntas_lista": [
+		{
+			"uuid": "c1f7ac34-561e-408f-af49-0a28865641e6",
+			"pergunta": "De 0 a 10 o quanto está doendo.",
+			"resposta": "10.",
+			"acao": "",
+			"data": "/media/response_audios/voz-mae-2-0006.mp3",
+			"peso": 0.5
+		},
+		{
+			"uuid": "3d5d05cc-501a-4123-a8df-52e2e3290df4",
+			"pergunta": "Está com dor? Onde?",
+			"resposta": "Dói tórax e ombro direito.",
+			"acao": "",
+			"data": "/media/response_audios/voz-mae-2-0001.mp3",
+			"peso": 1.0
+		},
+		{
+			"uuid": "1358193c-92ec-4e95-b550-fb7369ace40e",
+			"pergunta": "Vomitou?",
+			"resposta": "Não vomitou.",
+			"acao": "",
+			"data": "/media/response_audios/voz-mae-2-0002.mp3",
+			"peso": 1.0
+		},
+		{
+			"uuid": "2da1780d-9aa9-4abf-b62d-231141eec3cb",
+			"pergunta": "Teve convulção?",
+			"resposta": "Não teve convulção.",
+			"acao": "",
+			"data": "/media/response_audios/voz-mae-2-0004.mp3",
+			"peso": 1.0
+		},
+		{
+			"uuid": "3d491222-0d34-450e-b3bd-dfa3852e837d",
+			"pergunta": "Usou capacete?",
+			"resposta": "Não estava de capacete",
+			"acao": "",
+			"data": "/media/response_audios/voz-mae-2-0005.mp3",
+			"peso": 1.0
+		},
+		{
+			"uuid": "609568eb-b7a5-408a-8b53-d7ac588f203a",
+			"pergunta": "Desmaiou? Ficou desacordado?",
+			"resposta": "Não desmaiou.",
+			"acao": "",
+			"data": "/media/response_audios/voz-mae-2-0003.mp3",
+			"peso": 0.5
+		},
+		{
+			"uuid": "18a52b60-8361-46c2-ba03-7fc42c901f9f",
+			"pergunta": "Está aceitando liquído?",
+			"resposta": "Sim, ele bebe agua.",
+			"acao": "",
+			"data": "/media/response_audios/Voz-mae-0011.mp3",
+			"peso": 0.5
+		},
+		{
+			"uuid": "855f596d-2639-4adf-baf5-53037e3a0256",
+			"pergunta": "Tem alergia a algum medicamento?",
+			"resposta": "Não é alérgico a nenhum remédio.",
+			"acao": "",
+			"data": "/media/response_audios/Voz-mae-0004.mp3",
+			"peso": 0.5
+		},
+		{
+			"uuid": "b6edd938-2fc5-4894-9098-2f6505f0dea5",
+			"pergunta": "Teve diarréia?",
+			"resposta": "Não teve diarreia.",
+			"acao": "",
+			"data": "/media/response_audios/Voz-mae-0006.mp3",
+			"peso": 0.0
+		},
+		{
+			"uuid": "f14b24a1-1ebd-4e95-a087-8fd47d26c0a2",
+			"pergunta": "Faz uso de alguma medicação de uso contínuo?",
+			"resposta": "Não",
+			"acao": "",
+			"data": "/media/response_audios/mulher-adulta-1-0001.mp3",
+			"peso": 0.0
+		}
+	],
+	"exames_lista": [
+		{
+			"uuid": "a96adb53-1195-401c-91d1-ceb2cc512b61",
+			"tipo": "Ausculta Pulmonar Direita",
+			"categoria": "fisico",
+			"regiao": "",
+			"diagnostico": "Ausente",
+			"data": "/media/exam_files/500-milliseconds-of-silence_rIAUJRl.mp3",
+			"peso": 1.0
+		},
+		{
+			"uuid": "4d08601f-73a1-48ba-bff1-d1da884e4bd0",
+			"tipo": "Ausculta Cardiaca",
+			"categoria": "fisico",
+			"regiao": "",
+			"diagnostico": "Normal",
+			"data": "/media/exam_files/cardiacas_zt4tpaa.mp3",
+			"peso": 0.0
+		},
+		{
+			"uuid": "18b770b9-e72d-437d-ad9b-3f595484b208",
+			"tipo": "Ausculta Pulmonar Esquerda",
+			"categoria": "fisico",
+			"regiao": "",
+			"diagnostico": "Normal",
+			"data": "/media/exam_files/pulmoes_oT2Xuxj.mp3",
+			"peso": 0.0
+		},
+		{
+			"uuid": "d81cbc8a-9697-4712-aeb6-bad5e9ada64d",
+			"tipo": "Radiografia",
+			"categoria": "imagem",
+			"regiao": "Pulmão",
+			"diagnostico": "Pneumotorax Pulmão Direito",
+			"data": "/media/exam_files/images/Captura_de_tela_2023-12-14_135544_OwBY53b.png",
+			"peso": 1.0
+		}
+	]
+}
+
+
