@@ -31,6 +31,9 @@ async def play_audio(queue, websocket):
         audio_data = await queue.get()
         if audio_data is None:
             break
+        for client in list(clients_ai):
+            if client.state == 3:
+                clients_ai.remove(client)
         await asyncio.gather(*(client.send(audio_data) for client in clients_ai))
 
 async def handler(websocket):
@@ -43,6 +46,10 @@ async def handler(websocket):
             if request.path == "/oz":
                 clients_oz.add(websocket)
                 print("recebi pelo oz")
+                
+                for client in list(clients_oz):
+                    if client.state == 3:
+                        clients_oz.remove(client)
                 await asyncio.gather(*(client.send(message) for client in clients_oz if client != websocket))
             if request.path == "/ai":
                 clients_ai.add(websocket)
