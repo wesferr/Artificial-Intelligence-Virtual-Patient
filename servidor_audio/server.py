@@ -4,13 +4,14 @@ import chatbot
 import json
 
 # Lista de clientes conectados
-clients = set()
+clients_ai = set()
+clients_oz = set()
 
 data = open("context.json", "r", encoding='utf-8').read()
 data = json.loads(data)
 context = '''
 Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
-Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença.
+Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
 '''
 perguntas_formatadas = "\n".join(
     [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
@@ -30,30 +31,27 @@ async def play_audio(queue, websocket):
         audio_data = await queue.get()
         if audio_data is None:
             break
-        await asyncio.gather(*(client.send(audio_data) for client in clients))
+        await asyncio.gather(*(client.send(audio_data) for client in clients_ai))
 
 async def handler(websocket):
     # Adiciona cliente à lista
     global background
-    clients.add(websocket)
     request = websocket.request
     try:
         async for message in websocket:
-            # Propaga a mensagem para todos os clientes conectados, exceto o remetente
+            #Propaga a mensagem para todos os clientes conectados, exceto o remetente
             if request.path == "/oz":
+                clients_oz.add(websocket)
                 print("recebi pelo oz")
-                await asyncio.gather(*(client.send(message) for client in clients))
+                await asyncio.gather(*(client.send(message) for client in clients_oz))
             if request.path == "/ai":
+                clients_ai.add(websocket)
                 print("recebi pelo ai")
                 queue = asyncio.Queue()
                 play_task = asyncio.create_task(play_audio(queue, websocket))
                 background = await chatbot.answer_text(background, message, queue)
-                pass
     except websockets.exceptions.ConnectionClosed as e:
         print(e)
-    finally:
-        # Remove cliente da lista ao desconectar
-        clients.remove(websocket)
 
 async def main():
     server = await websockets.serve(handler, "192.168.0.120", 8765, ping_interval=20, ping_timeout=20)

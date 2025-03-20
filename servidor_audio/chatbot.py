@@ -38,7 +38,7 @@ async def answer_text(messages, audio_data, queue):
     # messages.append({"role": "user", "content": "olá, eu sou o doutor wesley, oque traz vocês aqui hoje?",},)
 
     stream = ollama.chat(
-        model='gemma3:1b',
+        model='gemma3:4b',
         messages=messages,
         stream=True,
     )
@@ -56,6 +56,7 @@ async def answer_text(messages, audio_data, queue):
         else:
             temporary_buffer += token
 
+    await queue.put(None)
     messages.append({"role": "assistant", "content": ai_response,},)
     return messages
 
@@ -66,7 +67,7 @@ async def main():
     data = json.loads(data)
     context = '''
     Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
-    Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença.
+    Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
     '''
     perguntas_formatadas = "\n".join(
         [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
