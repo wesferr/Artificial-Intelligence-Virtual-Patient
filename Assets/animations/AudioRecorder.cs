@@ -11,7 +11,7 @@ public class AudioRecorder : MonoBehaviour
     {
         if (!isRecording)
         {
-            audioClip = Microphone.Start(null, false, 10, 44100);
+            audioClip = Microphone.Start(null, false, 10, 24000);
             isRecording = true;
         }
     }

@@ -43,7 +43,7 @@ async def handler(websocket):
             if request.path == "/oz":
                 clients_oz.add(websocket)
                 print("recebi pelo oz")
-                await asyncio.gather(*(client.send(message) for client in clients_oz))
+                await asyncio.gather(*(client.send(message) for client in clients_oz if client != websocket))
             if request.path == "/ai":
                 clients_ai.add(websocket)
                 print("recebi pelo ai")
