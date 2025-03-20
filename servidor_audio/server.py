@@ -9,25 +9,21 @@ clients = set()
 data = open("context.json", "r", encoding='utf-8').read()
 data = json.loads(data)
 context = '''
-Você é {} e está conversando com o medico em um cenario de {}.
-Você tem que responder as perguntas do médico com base nas seguintes informações:
-Contexto geral do caso: {}
-Perguntas e respostas: {}.
-Você só deve responder uma pergunta de cada vez, de forma leiga, informal e concisa, em uma unica sentença.
-Qualquer outro questionamento deve ser respondio como "não sei".
-Apenas responda as perguntas, não de sugestoes ou opiniões.
+Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
+Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença.
 '''
-
-perguntas = []
-for pergunta in data["perguntas_lista"]:
-    perguntas.append({"pergunta": pergunta["pergunta"], "resposta:": pergunta["resposta"]})
-    
+perguntas_formatadas = "\n".join(
+    [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
+)
 context = context.format(
-    data["acompanhante"]["nome"] + " do paciente " + data["paciente"]["nome"] if "acompanhante" in data else data["paciente"]["nome"],
+    'mãe' + " do paciente " + data["paciente"]["nome"] if "acompanhante" in data else data["paciente"]["nome"],
     data["cenario"],
     data["descricao"],
-    perguntas)
-background = f"<|system|>{context}<|end|>"
+    perguntas_formatadas)
+
+background = [
+    {"role": "system", "content": context,},
+]
 
 async def play_audio(queue, websocket):
     while True:

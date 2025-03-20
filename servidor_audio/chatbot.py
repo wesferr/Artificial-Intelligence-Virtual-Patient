@@ -1,68 +1,16 @@
-import torch, transformers, json, asyncio, sys, re
-import torchaudio
+import ollama
+import torch
 from TTS.api import TTS
 import whisper
-import wave
+import json
+import asyncio
+import re
 import io
-import numpy as np
-import tempfile
-import soundfile as sf
+import librosa
 import pygame
 
-
-torch.set_default_device("cuda:0")
-
-model_name = "microsoft/Phi-4-mini-instruct"
-tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
-bnb_config = transformers.BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_compute_dtype=torch.float16
-)
-model = transformers.AutoModelForCausalLM.from_pretrained(
-    model_name,
-    trust_remote_code=True,
-    quantization_config=bnb_config,
-    device_map="auto"
-)
-
 tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to("cuda")
-# asrmodel = whisper.load_model("small").to("cuda")
-transcribe = transformers.pipeline(
-    task="automatic-speech-recognition",
-    model="jlondonobo/whisper-medium-pt",
-    chunk_length_s=30,
-    device_map="auto",
-)
-
-
-def convert_wav_bytes_to_numpy(wav_bytes, target_sr=16000):
-    """Lê um arquivo WAV em bytes, converte para tensor, faz resampling para 16kHz e normaliza."""
-    wav_io = io.BytesIO(wav_bytes)
-
-    try:
-        # Carregar áudio a partir dos bytes
-        waveform, sample_rate = torchaudio.load(wav_io, normalize=True)
-
-        # Converter para mono se for estéreo
-        if waveform.shape[0] > 1:
-            waveform = torch.mean(waveform, dim=0, keepdim=True)
-
-        # Fazer resampling para 16kHz, se necessário
-        if sample_rate != target_sr:
-            transform = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=target_sr)
-            waveform = transform(waveform)
-            sample_rate = target_sr
-
-        # Normalizar o áudio para -1 a 1
-        waveform = waveform / waveform.abs().max()
-
-        # Converter para NumPy e remover dimensão extra
-        audio_np = waveform.squeeze(0).numpy()
-
-        return audio_np, sample_rate
-
-    except Exception as e:
-        raise ValueError(f"Erro ao processar o arquivo WAV: {e}")
+model = whisper.load_model("medium")
 
 async def play_audio(queue):
     while True:
@@ -80,58 +28,66 @@ async def generate_audio(text):
     audio_buffer.seek(0)
     return audio_buffer.read()
 
-async def answer_text(history, audio_data, queue):
-
-    audionp, sr = convert_wav_bytes_to_numpy(audio_data)
-    result = transcribe(audionp)
+async def answer_text(messages, audio_data, queue):
+    audio, sr = librosa.load(io.BytesIO(audio_data), sr=16000)  # sr=16000 é a taxa de amostragem que o Whisper espera
+    result = model.transcribe(audio)
     text_result = result["text"]
     print(text_result)
-    history += f"<|user|>{text_result}<|end|><|assistant|>"
+    messages.append({"role": "system", "content": text_result,},)
+    temporary_buffer = ai_response = ""
+    # messages.append({"role": "user", "content": "olá, eu sou o doutor wesley, oque traz vocês aqui hoje?",},)
 
-    buffer = ""
-    generated = tokenizer(history, return_tensors="pt", truncation=True).input_ids
-    print(tokenizer.decode(generated[0], skip_special_tokens=True))
+    stream = ollama.chat(
+        model='gemma3:1b',
+        messages=messages,
+        stream=True,
+    )
+    for chunk in stream:
 
-    for _ in range(1000):
-        output = None
-        with torch.no_grad():
-            output = model.generate(
-                generated,
-                max_new_tokens=1,
-                top_k=50,
-                pad_token_id=tokenizer.eos_token_id,
-                eos_token_id=tokenizer.eos_token_id,
-            )
-        torch.cuda.empty_cache()
-        new_token = output[:, -1].unsqueeze(0)
-        token = tokenizer.decode(new_token[0], skip_special_tokens=False)
-        ends_with_number = bool(re.fullmatch(r"^[a-zA-Z\s]+[0-9]+\.$", buffer))
-        if ("." in token or "," in token) and not ends_with_number:  # Se o token contém um ponto final
-            audio_data = await generate_audio(buffer)
+        token = chunk['message']['content']
+        ai_response += token
+
+        ends_with_number = bool(re.fullmatch(r"^[a-zA-Z\s]+[0-9]+[.,]$", temporary_buffer))
+        if ("." in token or "," in token) and not ends_with_number:
+            print(temporary_buffer)
+            audio_data = await generate_audio(temporary_buffer)
             await queue.put(audio_data)
-            print(buffer)
-            buffer = ""  # Reseta o buffer para a próxima frase
+            temporary_buffer = ""
         else:
-            buffer += token
+            temporary_buffer += token
 
-        generated = torch.cat([generated, new_token], dim=1)
-
-        # Parar se encontrar EOS
-        if new_token.item() == tokenizer.eos_token_id or token == "<|end|>":
-            break
-
-    await queue.put(None)  # Sinaliza para a tarefa de reprodução de áudio que terminou
-
-    return tokenizer.decode(generated[0], skip_special_tokens=False)
+    messages.append({"role": "assistant", "content": ai_response,},)
+    return messages
 
 async def main():
+
     pygame.mixer.init()
+    data = open("context.json", "r", encoding='utf-8').read()
+    data = json.loads(data)
+    context = '''
+    Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
+    Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença.
+    '''
+    perguntas_formatadas = "\n".join(
+        [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
+    )
+    context = context.format(
+        'mãe' + " do paciente " + data["paciente"]["nome"] if "acompanhante" in data else data["paciente"]["nome"],
+        data["cenario"],
+        data["descricao"],
+        perguntas_formatadas)
+
+    messages = [
+        {"role": "system", "content": context,},
+    ]
+
     audio_data = open("audio/paris.wav", "rb").read()
     queue = asyncio.Queue()
-    background = ["<|system|>você é uma ia de conversa, voce sempre responde em uma unica sentença<|end|>",]
+
     play_task = asyncio.create_task(play_audio(queue))
-    background = await answer_text(background, audio_data, queue)
-    print(background)
+    messages = await answer_text(messages, audio_data, queue)
+    print(messages)
+
     await play_task
 
 
