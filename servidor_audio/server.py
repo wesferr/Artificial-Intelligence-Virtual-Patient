@@ -2,22 +2,45 @@ import asyncio
 import websockets
 import chatbot
 import json
+import time
 
 # Lista de clientes conectados
 clients_ai = set()
 clients_oz = set()
+time_delay = 0
 
-data = open("context.json", "r", encoding='utf-8').read()
+try:
+    evaluation_times = json.loads(open("time_diffs.json", "r", encoding='utf-8').read())
+except Exception as e:
+    evaluation_times = {
+        "llm_times": [],
+        "tts_times": [],
+        "stt_times": [],
+        "audio_times": [],
+        "send_times": [],
+        "receive_times": [],
+    }
+
+actual_time = 0
+
+data = open("context2.json", "r", encoding='utf-8').read()
 data = json.loads(data)
 context = '''
-Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
-Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
+Se o médico fizer uma saudação (ex: 'Bom dia', 'Olá'), responda apenas: 'Bom dia, doutor' ou 'Oi, doutor' e se apresente.
+Se for uma pergunta médica, responda conforme os dados abaixo, em uma única frase simples.
+
+Você é {0}, {2}, você responde conforme as perguntas {3}.
+Responda apenas como {0}, com base nas informações fornecidas.
+
+Nunca pule para respostas de perguntas anteriores
+Se não souber a resposta, diga: 'Não sei direito, doutor'
+
 '''
 perguntas_formatadas = "\n".join(
     [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
 )
 context = context.format(
-    'mãe' + " do paciente " + data["paciente"]["nome"] if "acompanhante" in data else data["paciente"]["nome"],
+    data["acompanhante"]["nome"] + " do paciente " + data["paciente"]["nome"] if "acompanhante" in data and "nome" in data["acompanhante"] else data["paciente"]["nome"],
     data["cenario"],
     data["descricao"],
     perguntas_formatadas)
@@ -25,6 +48,11 @@ context = context.format(
 background = [
     {"role": "system", "content": context,},
 ]
+
+async def send_and_recv(client, audio_data):
+    global actual_time
+    actual_time = time.time_ns()
+    await client.send(audio_data)
 
 async def play_audio(queue, websocket):
     while True:
@@ -34,29 +62,52 @@ async def play_audio(queue, websocket):
         for client in list(clients_ai):
             if client.state == 3:
                 clients_ai.remove(client)
-        await asyncio.gather(*(client.send(audio_data) for client in clients_ai))
+        asyncio.gather(*(send_and_recv(client, audio_data) for client in clients_ai))
+        # await asyncio.gather(*(client.send(audio_data) for client in clients_ai))
 
 async def handler(websocket):
     # Adiciona cliente à lista
     global background
+    global evaluation_times
     request = websocket.request
+    if websocket not in clients_ai and websocket not in clients_oz:
+        actual_time = time.time_ns()
+        ping = await websocket.send("")
+        pong = await websocket.recv()
+        time_delay = (time.time_ns() - actual_time)/2
+
     try:
         async for message in websocket:
+            try:
+                if message.decode().isnumeric():
+                    # print("Ping: ", message)
+                    recv_time = int(message.decode()) - time_delay
+                    # open("time_diffs.json", "a").write(json.dumps({"time_recieve": recv_time}, indent=4, ensure_ascii=False))
+                    evaluation_times["receive_times"].append(recv_time*1e-6)
+                    continue
+            except Exception as e:
+                pass
+            if message == "":
+                evaluation_times["send_times"].append((time.time_ns() - actual_time - time_delay)*1e-6)
+                # network_time.append((time.time_ns() - actual_time - time_delay)*1e-6)
+                # open("time_diffs.json", "a").write(json.dumps({"send_time": network_time}, indent=4, ensure_ascii=False))
+                continue
             #Propaga a mensagem para todos os clientes conectados, exceto o remetente
             if request.path == "/oz":
                 clients_oz.add(websocket)
-                print("recebi pelo oz")
-                
                 for client in list(clients_oz):
                     if client.state == 3:
                         clients_oz.remove(client)
-                await asyncio.gather(*(client.send(message) for client in clients_oz if client != websocket))
+                asyncio.gather(*(send_and_recv(client, audio_data) for client in clients_oz if client != websocket))
+                # await asyncio.gather(*(client.send(message) for client in clients_oz if client != websocket))
             if request.path == "/ai":
+                await websocket.send("")
                 clients_ai.add(websocket)
-                print("recebi pelo ai")
                 queue = asyncio.Queue()
                 play_task = asyncio.create_task(play_audio(queue, websocket))
-                background = await chatbot.answer_text(background, message, queue)
+                background = await chatbot.answer_text(background, message, queue, evaluation_times)
+
+            open("time_diffs.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
     except websockets.exceptions.ConnectionClosed as e:
         print(e)
 

@@ -1,0 +1,331 @@
+{
+	"uuid": "23394c6d-83fe-4192-b913-cd86ede01dba",
+	"nome": "Mieloma múltiplo",
+	"cenario": "doctors-office",
+	"tem_acompanhante": false,
+	"area": "Hematologia",
+	"descricao": "Paciente do sexo masculino, 64 anos, negro, aposentado, hipertenso controlado, sobrepeso, ex-tabagista (40 maços/ano), vem ao consultório com queixa de dispnéia progressiva há dez meses e síncope há 1 mês.\nO quadro de dispneia iniciou aos moderados esforços, evoluindo com piora nos últimos três meses, impossibilitando a realização de atividades rotineiras como tomar banho, pentear os cabelos e se vestir. Paciente também relata edema de membros inferiores, fraqueza e dor em região costal (costelas).\nTeve diagnóstico recente de síndrome do túnel do carpo e apresenta “dor cansada” em região lombar e membros inferiores, atribuindo estes sintomas à idade avançada, toma analgésicos comuns (dipirona e paracetamol) que relata melhorarem a dor, porém sem cessá-la.  ",
+	"paciente": {
+		"uuid": "01a829d6-f16a-4452-9cd6-0d942ab141a0",
+		"tipo": "Homem",
+		"nome": "Geraldo",
+		"idade": 64,
+		"peso": 76,
+		"altura": 174,
+		"sexo": "Masculino",
+		"faixa_etaria": "Idoso",
+		"naturalidade": "brasileira",
+		"nacionalidade": "brasileira",
+		"cor": "Preto",
+		"posicao": "Sentado"
+	},
+	"acompanhante": {},
+	"sinais_vitais": {
+		"temperatura": 36,
+		"frequencia_cardiaca": 72,
+		"pressao_sistolica": 135,
+		"pressao_diastolica": 68,
+		"saturacao_oxigenio": 97,
+		"frequencia_respiratoria": 18
+	},
+	"diagnostico_lista": [
+		{
+			"uuid": "82de96d9-63ed-475e-b3bf-3e88173466db",
+			"nome": "Doença pulmonar obstrutiva crônica",
+			"cid": "J449",
+			"peso": 0
+		},
+		{
+			"uuid": "8945bcb4-4634-4012-b409-daddfeb6758f",
+			"nome": "Mieloma Múltiplo",
+			"cid": "C90",
+			"peso": 0
+		},
+		{
+			"uuid": "6b2980a8-fbe4-4095-a750-08275f0cb2a7",
+			"nome": "Fratura de vértebra lombar",
+			"cid": "S32.0",
+			"peso": 0
+		},
+		{
+			"uuid": "2e5d01bb-c237-4a3e-a99c-11ebe592997c",
+			"nome": " Neoplasia dos pulmões",
+			"cid": "C34",
+			"peso": 0
+		}
+	],
+	"tratamento_lista": [
+		{
+			"uuid": "14a71bc7-313d-479e-bfa9-d61fa8ec78e0",
+			"nome": "Quimioterapia intensiva",
+			"posologia": "VRD ou VCR ou Rd X 4 ciclos",
+			"peso": 0
+		},
+		{
+			"uuid": "2e8027ad-f4ec-4cab-8428-85cdaf0b8359",
+			"nome": "Internação e Cirurgia",
+			"posologia": "em até 72h",
+			"peso": 0
+		},
+		{
+			"uuid": "8632bf88-1e3a-4974-bcff-2d3673d29003",
+			"nome": "Quimioterapia intensiva",
+			"posologia": "Melfalana e bortezomibe ou lenalidomida",
+			"peso": 0
+		}
+	],
+	"perguntas_lista": [
+		{
+			"uuid": "5a4c5e9b-b95d-43f9-ae6c-61f985ef13a0",
+			"pergunta": "Com o que você trabalha?",
+			"resposta": "Sou aposentado",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/6ecb1c0a-6f5f-431d-87f8-af7e373be52e-sou-aposentado-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=7e5e51a82abcfe89729dcba059fc406329d838422b2595ebe78d74e55430bbdaec1ee9b5a904b2c8e6604cf0b2988326c7160420293fa7045b7c0cfbd48b9a99b6037e75491e3eac37038dde931b445b2f52653f14a721c1592505584e41ccd4dbaa83a81dcb6391064c69810181d366d958eb6da533c33878f511c2757399cd45d93b1dd3cde1d6b176a4bd00f87e305817eff2ec6990c3a95aba4fb33c4833dbd4eb8f0ca2d220e48e767803787a61db6ed1fffb4cd3fdf62653d259d32e2ccf039355cf70ae57430f2156fde0525c4c713b9a12c59c27b24b17ca7f74c1207a3f17e3c7c13a01cd4e234df43f82cf97b1fc2adcac5712d609e87edb4cfee2",
+			"peso": 0
+		},
+		{
+			"uuid": "cc2c80f9-d21f-4450-8e08-cd5dd5d2333e",
+			"pergunta": "Tem diabetes?",
+			"resposta": "Não",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/2e8a536a-d94d-4863-b4ab-008522fde909-nao-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=29ecf4abfbfaef47ee6fb50acc4c9b419e726a9388679b1b8b46b72757aa42e897a3ce97387216ec0f3c678e2695b9b0d0aee1e6f494ce8d83414f6c97df84388e9d7532de1ce3a6080d9722bc629215a52a4cf601fb8bdcbba0bb58e1773da2271c57d7c8eba6b46accf2b4cf54e098748a8d223a59141f946872638f02eeebf6807d731ba4c848e7504548953dc84ebf815c798a5574c1c43c56f017a7c1ea7b3477240bfc0cd0e9275af0670db687032277103361ca1880b9ecd113d1e7e8760434a43c2d650627f42e30ffb445c49f2bc180bf0ab649cae570ce45add85bc785defe3985ad44df003bc515343135cd4779a751798686a9ee6ae0fc95487f",
+			"peso": 0
+		},
+		{
+			"uuid": "acc1fe1f-9fce-43ba-8ca3-de58c9273f89",
+			"pergunta": "Teve perda de força física?",
+			"resposta": "Sim, me sinto cada vez mais fraco, doutor. Não consigo mais cuidar da minha casa.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/2f11cd92-b42b-4413-aec1-7082ead44f6f-sim-me-sinto-cada-vez-mais-fraco-doutor-nao-consigo-mais-cuidar-da-minha-casa-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=458adca4b668175206e5ca82844ba09384cd7e8acf2cf86cdb2743afd6a9641d35b3e194cd9cc32bfdecb6be18a7d507f94246e1bac75d1546d7179d63e506b3c0a9c4801ccc548b791b8de05a8c934d1098cae5a830ed584581af046e7db4969cc4a5eb92313902f290129a3a73c51cd2a400d7bd7a719b4639bd1da8041fbfcc443823da5ddeb45f1845c5d0a6dc138fdae2cd021afa8405a799cae5cccaa32b3db711e0d1b248daeacacfcf021016628a392b83e0389a8a61e28177855c0a62aa308178cde3eccec7181e198ab99ede6afcc8f445604ca582af6cd0466f376ad987d846a5647f142621a1f75ccfa815877e2b33fbabed5089e281eb27444f",
+			"peso": 0
+		},
+		{
+			"uuid": "2452be2c-9553-4168-be55-add8a527dbde",
+			"pergunta": "Toma alguma medicação?",
+			"resposta": "Sim, dois para a pressão",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/b5ca8220-d25a-41c2-8463-73d9645a1a9f-sim-dos-para-a-pressao-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=62d6f8fce653adf0b15b526b4e4f05b247676c882e5efb818db964be513928ab66c740adfad3a39e543ef41fcb94207551422d4eb8348889e17b060f473301a9348cdfe997103d6a648f91683c52ce123688fa8f641b3df80b306065593645804bf875b70b8822270ecac7236f8d481e4c5d0d8bdcaba95142f79515a74e444f4038b0760cdd4e9425975348eb59c784c5814df10f2f6164b5b3e85b149d8f12d94684d00aa19cfe9d19f54f7fdd3c7e8ce4330e7303b5c33c00e2f8fc85b082e391dc04e77a3ef7df7c1a7dc8e951a18a1f53fbc4cec5dbf92c6dbe7a433f9b7b85ef5c53ffd96a75ee4d22d79f3a6ff591c1c3d489406746eb82ab024ee01c",
+			"peso": 0
+		},
+		{
+			"uuid": "ada0abc4-bab1-415a-ad8e-8ee552b47b50",
+			"pergunta": "Está com falta de ar?",
+			"resposta": "Sim doutor, até sentado eu sinto falta de ar",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/f590020a-e545-4bc9-b302-8ab81b0c0134-sim-doutor-ate-sentado-eu-sinto-falta-de-ar-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=7e9a032d19e12a56ac8401ccc3ec948ef081fe5f9162fb793183d99ac1d5e95b82462f363898ec9785142e66643116066fcd67666a1fcd5467f7ac688453ac2aaac8a0e3d2e168065d27232e64fabb7257fc83add59a03485d7ee904365c7f7757f3947c8c1bb0314e18825cfdb050f8ca8abc96d37d75f59b900ab5e8698e440cdf6cf520bf1132fb8a1adfea6209ca3b4f1f7ee6e343c9304e0e0539a16d60425ecb904b03dd6513cadd8381928b7319649fdf5c815c5d791df4678893a0debdb990c6e44b50fd20da1a1fe868a7124f4453b9475d2e7dca468d7e460b800ec3166efe0f5f86b256cecfeab5a6dbf1c37372b1ea7cb3bb643f629b0a85f63c",
+			"peso": 0
+		},
+		{
+			"uuid": "0cfd9bb7-020e-4924-9629-0cca558ba1b2",
+			"pergunta": "O calendário vacinal está em dia?",
+			"resposta": "Sim, até a do covid.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/108651fc-7eff-4425-9158-8f5f47151169-sim-ate-a-do-covid-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=46b194d2e284989df1b47a346c933154ab074d21791faa195611ef870899f6d682534a0b7ae1cb7fb8668b1b8a75d817438efe5eeb6d1f160e111d45eaa4c84dd82131d24956535850ea7d32eb346eb211767a6d26f4f9de6f0a3737a83a1e303e6f865734fd6b7b4bf315f6674977fb089bb013c04042f0b777ecacb78be26f5ac178c85f04118572ab1fe77d79888e1f0c9f9732fd8f31b3ca91e12c09e84cefa2fcce286e78f7803870f143ef1c7f2bc40c71d8156faf2dfcadb18031ef9b7ca79786aa0eaa7267d667b27f2f4b1fde3e338fdf8a641d6e0fbcebae21bfcde6bd0e2a6a46ca4d906b96eb6999ca7917608f2d0cc327b04ae0633579df84e7",
+			"peso": 0
+		},
+		{
+			"uuid": "609568eb-b7a5-408a-8b53-d7ac588f203a",
+			"pergunta": "Desmaiou? Ficou desacordado?",
+			"resposta": "Sim, eu me senti tonto e desmaiei",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/e2d5b70f-de3d-4ff5-8e2c-b74a185f041b-sim-eu-me-senti-tonto-e-desmaiei-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=484f0463755b651ecf062f918bbab0e8186198cf1ff0e42b8a8cdabab563335977d917e73deab32506f9da0171d9bf3de22539fd0363b8066f0bf75ede4d97cc86a98f3f5f5055ffcfe65b2dad82ae313e0dcb9aa692dd70f128de68449f265048aeeebd5ebae88f9ec6c5497a74c93fb4132e6c91967b4d3f31a28760fb22aedc377bf9b616f90e8d55e14b8911b9d21e7f638a35cec56b8362502a0ebe8aad4eb90783c2706068b6e7913061b68468a3764f1c2343ccf22a99736e20c4dc2f6d58215aaba6bceb6c0bb78aaf619ce228d3ce5efc90cad56e0ab30efe0054f49c7d2b61141bf98afe957c9ea350c7d55f35dfa040e1600d05a0bfdfca4c51da",
+			"peso": 0
+		},
+		{
+			"uuid": "3d5d05cc-501a-4123-a8df-52e2e3290df4",
+			"pergunta": "Está com dor? Onde?",
+			"resposta": "Tenho dores nas costelas e na lombar, acho que é pela idade.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/df222e96-dffa-4323-bc5a-5e842200c655-tenho-dores-nas-costelas-e-na-lombar-acho-que-e-pela-idade-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=4b6d49b5d881d866a251555f06f1867c701b58298de62b25ea43c9b9b1ed5f9e423c47fde5c2bf68d634a71314ff2e86e2529445c18d061a4169216e698b5019e02819821d4fb09b07451e74bd67b632cec1ecd2334b2aeb3b71ca3bdc5675416569fad4888e9d16834d01fda9eb86bb06547c09c140373ee6806f9416adf8352547d0ce850a847ae31c1517a470bcca7b3ad8c11211dad548216546a25e6f7798d1727e3e2ec31f1f291fe5e4fb35000f5e228305be02d386a7e4e637c829afb003f52d033cbc7a89aec15ec06a8a7e8877a448d294e38ad14ac8bbf82b96b47eab427715e8847912c90c59b023dc34d270f3153583b69dadb731af923d778b",
+			"peso": 0
+		},
+		{
+			"uuid": "c1f7ac34-561e-408f-af49-0a28865641e6",
+			"pergunta": "De 0 a 10 o quanto está doendo?",
+			"resposta": "7",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/36c2386d-f90a-43b4-84c2-d9c920d2c9a4-7-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=07dedc0ac98670fa4ddd6bbf988249fa54b8f6dda794fa7b14945bfb868fbf4277b87246484eeb7d4203818825beccfb6fa0c0ed834e52393cb73407b31235b27ce94a7d28419b9716de532ddc3779acef6119692ddba23f4bb9e31fdbe2689dbca11b8877daca948a7fbec8b79d8ca461b9a60664c56b437d6687c08cae42f263cd8a292acef72da94b88cdaa1e966949acd9e47559dd1de1ba5506e73d5c5a43ac0f1c33f8912e9baae3ab9d4f443ad72e15992bfe74af95227df021595b4182147519e0c6024d973c1b4d323321242897b86548e118a669a714634b86dfa257e025ce3d71f94059053d9fe3cedbc4e62b182b28d24fa94fd01a2c182cd6d5",
+			"peso": 0
+		},
+		{
+			"uuid": "d90ac1d1-ee92-420e-bb37-0bc37edd1f75",
+			"pergunta": "Qual o tipo da dor?",
+			"resposta": "É uma dor de cansaço, como se estivesse pesado.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/580fb929-a719-4660-a8b9-882765f1b1fb-e-uma-dor-de-cansaco-como-se-estivesse-pesado-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=2985d43363ccb49fee4515f149b35c3f6677d4ac3f9afc9c788b5b081bb67e77db778f345cc871c843d55893c94b393b3f9c07d7e1f8efeb9de1bad90ec4287d6f854eb64d204410235fe23d7a0e9b5c8496bbb1b33abfe1588a2a0c97b85d71284578f11b33e892cb9238caec864c1f9f22ffa962cdb376bb60c093005a63c60802455649beb53cc240c63b40870949d9066c86884c0bd6d25944aa4adc58941261554ecc74734713c6583568074567ac6bf0b9997666901d610b4bb1d3c3e6adcf0d201b1e2ef12f5af7ac68848d32a73cbf33d0e8211c788da3adfd611a710342cd0d1d46a1cceea5af4390c66e628cbcf03b237f03e525fd34e0b49d5d6d",
+			"peso": 0
+		},
+		{
+			"uuid": "e06810da-1c12-4cc5-8236-781ca6759d07",
+			"pergunta": "Teve febre?",
+			"resposta": "Não tive",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/e43c43f5-a901-49b1-b3e1-1d0cbd797f7d-nao-tive-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=6f8101f4c2634bca3408533efe74a6cf9cc7686a8184f64838f00ac19c2f61a4e1e9a5c26b1ba03ab89b36c10aa677bba77ed98ddef83e39fd1181c71e791361762b6d69de633f5bea9e6fc940a0ce61384c3fc93bf441bd3384485a1c822c28593c960bbd434eb65e7b8e60c8bc34f85e2e7802d586e19f2210ce5111d112cccd9e3e4ad7264a6357951e87114d71787964f7b707d00dc36e3af5d994f66a2eec4e14f72063d3edda4e060b4bb8c89ac877d06786cf5376bdcdacdd95aaaaff94a6e6324abf6c596ee9f261744a014a9e44d6834124e1b4532bfd0c6edb5aacb29a1b966277995d0fcdb7ff42cdeb3a9a3ffc6d6264d2ef011fd04f0a29968f",
+			"peso": 0
+		},
+		{
+			"uuid": "9afa8b73-24ea-4a24-89ff-bcfb72ef9c0f",
+			"pergunta": "Teve alteração intestinal?",
+			"resposta": "Não tive",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/e43c43f5-a901-49b1-b3e1-1d0cbd797f7d-nao-tive-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=6f8101f4c2634bca3408533efe74a6cf9cc7686a8184f64838f00ac19c2f61a4e1e9a5c26b1ba03ab89b36c10aa677bba77ed98ddef83e39fd1181c71e791361762b6d69de633f5bea9e6fc940a0ce61384c3fc93bf441bd3384485a1c822c28593c960bbd434eb65e7b8e60c8bc34f85e2e7802d586e19f2210ce5111d112cccd9e3e4ad7264a6357951e87114d71787964f7b707d00dc36e3af5d994f66a2eec4e14f72063d3edda4e060b4bb8c89ac877d06786cf5376bdcdacdd95aaaaff94a6e6324abf6c596ee9f261744a014a9e44d6834124e1b4532bfd0c6edb5aacb29a1b966277995d0fcdb7ff42cdeb3a9a3ffc6d6264d2ef011fd04f0a29968f",
+			"peso": 0
+		},
+		{
+			"uuid": "051ca466-c0fc-42eb-8355-01378c096f53",
+			"pergunta": "Tem alguma coisa que piore a sua dor?",
+			"resposta": "Ela dói o tempo todo, independente do que eu faça",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/13d7875e-a486-493a-9af7-4424f545ac31-ela-doi-o-tempo-todo-independente-do-que-eu-faca-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=66037784834be603fe5e148200dc50d123928af4d9b0b75ab983fcfe1e82fb6efa7c6529d693dbb217a5dacb56a23f5f776fbcbb8df67efe609df0995c4cc4c2d1534357471b2e181b87df45e3a881c0c085efed0ac2265e69966766363aeacd93fe240aef3c0f54a3c8656a0cd1788210fa69f881fcad755695833c21baffce03f8e21693e99df1250a90f765e752a13f500351d6dcc016a3eedda214077e6fb078c4a08ebf1114027ae03739480d0458aed7c364e0190e4c36b308e6b6b6e17917a54df71be1a237b95958ec87bf2e323ce1fe0bdc3cccbd07b93faeb60bc7aec2c5ccba300bf806b09f8e0d36c683d921aa86cd9969e9a9dd5da9c2b4493f",
+			"peso": 0
+		},
+		{
+			"uuid": "05b9246b-76f9-4b99-bee9-0cb928a85e6a",
+			"pergunta": "Tem alguma coisa que ajude aliviar a sua dor?",
+			"resposta": "Dipirona e paracetamol, mas a dor não alivia por completo",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/574a02d4-9ce7-4765-a17b-b106c667baea-dipirona-e-paracetamol-mas-a-dor-nao-alivia-por-completo-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=3b4bbd3a3e6afd007dcd053d8339ebadd9f20e2a6e1e16138adf3a533f7fe5b50cb90554e3033a79ea8556a83976547134b0df1616f89d96916efb0d143f5ed5a9b2e9e611fce0ce20edd05f5d22ba7d111222cde8e2375bafceba999dd8c7eb26f9f0c8d09cc4cf3a77de54849875a38c6534beb7cf37272ecba6387a57940214c9324457ef00774fcd1a28dd9900c5295796323380484af22386b8fea931e48dcc7a83b1bc7543b1d5d8be62bb58b74b5f216ed0579ff16ad90ca2354e6763b5bb6d9ca0a0a4b03128e9badfcfeef68a22a41c66cdca58e9e1476a43e52468fb20474c52d081991de31cd3b64139f574a249fdeea11acd0fc4809756ed1f09",
+			"peso": 0
+		},
+		{
+			"uuid": "5b7c8646-2492-43be-9802-76fed1f078ed",
+			"pergunta": "A apetite está bom?",
+			"resposta": "Não sinto muita fome",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/44d76e3b-e68a-4c51-9c93-66ef1edf7a5e-nao-sinto-muita-fome-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=8b1d5e5cff71bf8dbdae8d6e53b8770c9cc75f98bdc7887c6d3be68486b9437c39afc981b6e883d3a450cfd22047ac678d04a2a05989fc686c1df994efa7311de03aa62daa1932d05ed5070a2c187d5b8c5dacf3af2fcb78b2a7f54375876a7c085db8ad7bc80981b2d5ac8aff465d70d469991a7a40ca4066e62f525c611b083a1d57a6ca8a9b3152907423a448168b38f1ead2b528a97da5d5bdcf0f07dc7eaabf6061dc80490f7fe731f7aaec1775c255e2dc4528b89527a58335a97fa5351c0bb1930345a72f580458d869fb3e203be436265f44eca89519be582e29668a4d6070dad0d77ebea07f2493803d846790e6469fb22b8e94149d880b811a6569",
+			"peso": 0
+		},
+		{
+			"uuid": "c9df2cea-d9b2-4323-b35d-59bea9ed3532",
+			"pergunta": "Está com tosse?",
+			"resposta": "Não estou.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/7a12ca04-e0ed-4269-9d3e-3390e8654a55-nao-estou-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=581a7dfa6f425957521bdedd19a3c8dd96e6c8c0ebc40bf96fb383a9e93b28498784eca8b16b2c02e2e0c5149bc0f7763f435c8e5265cfe640b69163431866c8eecc221ad5ca64a690fd89f9ca198c4f4b8491b67c662b1a7e953be5ddd25570efa4e475480b5fd5f19e98a88bc186101052f85863eea6547dfa5e60a8dacb57668c959f448cdf2348145bc79a4cf425f6a44cfe0c3e43bb276a6b51cbfcb3e1cee8685f0a34c598b5f52f818a93ac4a0b9f21ac14077e9aa90aaa191b65e645a09cb14bb05cb20cb186d5703631ac45459c9ec502d04a54f97e86b3c0f2efb50db2a425ba07403ea42e701ed975e7c0c479dae0fee4529e1a868bf650703119",
+			"peso": 0
+		},
+		{
+			"uuid": "6c9b2c69-cea9-470a-ab39-8896ede68843",
+			"pergunta": "Tem dieta diversificada? Com carne, frutas e verduras?",
+			"resposta": "Sim, gosto muito de comer bem. Tenho até uma horta em casa.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/d8f9b1df-c975-4994-acbe-b3e14920e1e5-sim-gosto-muito-de-comer-bem-tenho-ate-uma-horta-em-casa-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=4d8ac2827f2c8496b9b224e4aa8971dc2c7c77aa3b50a59030e284d84cecfe5793d08e4c7da9a5ca3eb72e36b28ea1693da32140122c6cabb15a1c622d56d1bc6a36223a45d378efa5b3f1d0a64a7b5593f35131195419236e69273dff3ff8473bd42931a27c6f8916f9244e8eaba6eb1d883a9f2d683372cff76b244932f869c116646f12e87e6e1d271c5c5ccf5fd808d97c6a541d5d8b9cc4990bef368d80b14fa66d7224c47105ae0c618443733dbc392fe81d039ac44e10c2d8bf4c3581ab314de9ea6753875d10d986d93e9575b703098b0bf3875460d77528fe8a661e47323a8056a4e057fcf6a1539e9d215aa08e3688661aeacbb5394e24b58dd608",
+			"peso": 0
+		},
+		{
+			"uuid": "e243ec08-415e-476d-94ee-9e8928e625d7",
+			"pergunta": "Teve alguma perda de peso recente sem fazer regime?",
+			"resposta": "Estou mais magro",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/39445c07-9345-45b3-8772-07201966cb37-estou-mais-magro-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=7ac433e343c3bbd2f0471eedbabe88097554f31028b2cbf3cb70af3ba1eb472fed1be8080e4b886bff118b2585faa876bed4fc134febcfb70853d21e73c321765593776b48723db4a9d0639ee5c8bc5c36bd6446bd2a416879480bf387d52e1ed0984108d63844f80c18ac3de1b513bc47e0ca5f3891122c3ccaa3dc0b70022a8bae6aed2243e217fcc95a54371e5f3cd67a56de74a543a552671af2de5f47c7a55cca39d0dce02d3a60ef3e5ce64c797a5bea78011aea01d94d84cd4a6d9a32e67d314e3fde1a262f12d77562a0a16734d1d9c3773f93fd62c4c9556633a5f976103b582f0f57dc98906cdbb7d07d852e26d0a78a4b962456dcf5a938a441e4",
+			"peso": 0
+		},
+		{
+			"uuid": "dac8abe5-4e87-4a17-a39b-311f6b8f10b4",
+			"pergunta": "Teve quedas recentemente?",
+			"resposta": "Não tive",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/e43c43f5-a901-49b1-b3e1-1d0cbd797f7d-nao-tive-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=6f8101f4c2634bca3408533efe74a6cf9cc7686a8184f64838f00ac19c2f61a4e1e9a5c26b1ba03ab89b36c10aa677bba77ed98ddef83e39fd1181c71e791361762b6d69de633f5bea9e6fc940a0ce61384c3fc93bf441bd3384485a1c822c28593c960bbd434eb65e7b8e60c8bc34f85e2e7802d586e19f2210ce5111d112cccd9e3e4ad7264a6357951e87114d71787964f7b707d00dc36e3af5d994f66a2eec4e14f72063d3edda4e060b4bb8c89ac877d06786cf5376bdcdacdd95aaaaff94a6e6324abf6c596ee9f261744a014a9e44d6834124e1b4532bfd0c6edb5aacb29a1b966277995d0fcdb7ff42cdeb3a9a3ffc6d6264d2ef011fd04f0a29968f",
+			"peso": 0
+		},
+		{
+			"uuid": "f834131f-473c-44e5-b25c-e47bb38bf4c9",
+			"pergunta": "Você fuma?",
+			"resposta": "Fumei por muitos anos, doutor. Mas parei há 10 anos",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/f8e848b4-d091-4a2b-99d0-0e44beb6c800-fumei-por-muitos-anos-doutor-mas-parei-ha-10-anos-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=196fc14260a11481bee971f3fb973ee22a65d6db71127af6e1de264834dc8bf12732483e5509c41933730cc73af3b8e7ab788e3c53cb953c99484a0065ef3616285413505929a3d96c7517d4867e0f689135590fc99400e48527b0e81a594f0ac45323ce1a40e82e063a46b01d5f9ffd2ae80dfee75ab657b41c46361f319dedf1e7be2ba044811c27d237f9c35e1fd0443e3656b4010f1badf9d43221568538ae25ca1e74b8c527a9d3ab3ef903c106430f9b80ca23b1b3a45bf0917059087c723451a889922381ede6db323f6f2a84b361b156fd67a316c8555ce41fe62d2af4ea89bf134ed008ca44492f546050613b9dcf8701e650569e9e8e69fce5ab86",
+			"peso": 0
+		},
+		{
+			"uuid": "c1006eec-475c-4a04-9452-ab600cb10803",
+			"pergunta": "Ficou com a pele amarelada?",
+			"resposta": "Não percebi",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/e371708a-40d0-445d-b6a9-a9c140db1622-nao-percebi-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=04e46139daba70d007197a161ef79df8be797f2079403a12607492be1fa4304821391eafc667278d1402063230b805b30beff85810c33714da939c053d40cfe34960864a986ef8feb5a751b0c61ed503d4754322582b0afee565c805c07efcf84b48dafb2bf85b40c53e989af0bb1a888649a4d383c46a6e4b22b417ffd3e1e030d31fd8704c572da642d0037d7a729d4062cb2689ac458d365cb4cfa861c0042a8bdc7b9f2325a94b361dc2717cdb4a028ea61c688bd1253350a436187d61f36ca3aa969f7b7d1e7e2865bc5041cf3bd30d6468dbae5ac946f17cb23f213969490c7d7151f7db9c0243052160ac677b6ec1ad93a20ee425a1caf61753b6a829",
+			"peso": 0
+		},
+		{
+			"uuid": "632e3aa9-50eb-46b5-a0d6-39e5bc8f2ef6",
+			"pergunta": "O senhor se lembra o nome das medicações que toma?",
+			"resposta": "Hidroclorotiazida e Enalapril",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/f07665ec-bbf2-4dac-a22b-36a9859a376b-hidroclorotiazida-e-enalapril-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=8fc73caa1b63212bde3d5e6a9c621c79e620510aa8c1555fdd3722cf8de415c1ad6ec8e248d2b2730004fb0d793e8b3e673171434f6eef3df7f695a21d5300b2d5894e80d7c40410d9d75ccd5c89fde6f1e1d5cf2692f1d124a107df7127f7213856764ad8340e8183488daa9e74ae39464d145ba3270a60878ad1991c4aebe4e2fa06e01feb29a4be90b066fbd1be702c56e38e4276585f63abc59abeeb7385f6041af9059cfa7eb0040047d9e018b73d845496de6e1277d00270a5a17e51e7d046ee6abd80623e784d7e5ffe81691d010700a536fc00d55a2dafbf4ff4373b66b7047a07e35c163a888b754dd4f3e175396a2a5697da16ef6fcc936c9d4c0a",
+			"peso": 0
+		},
+		{
+			"uuid": "edca7896-05c6-4b5a-b1a9-f2932071e7ce",
+			"pergunta": "Quantos cigarros fumava por dia? E por quantos anos?",
+			"resposta": "Fumava uma carteira dos 14 aos 54 anos.",
+			"acao": "",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/response_audios/c5946286-3164-4941-ba0e-91f89f4514b2-fumava-uma-carteira-dos-14-aos-54-anos-masculino.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=769a5820fb3ce1cce26f0293146a9fcd26bb3ee6cbe84863a659e7664442b6070e385333dbaadc987284fe7d9b05947e95933fbe1e54960c33e426d870f53baa81487be1a95aee39391fcfed2917a17afb8b6e3a67d5bda926c15097a5f9d672b0067c961732fa900a5cc64e4d846abc30c30f5cfaa4dfe61c0267be7a8ce378cff7b18d61d7268ed1d0cda14df0795541bf9e37c7007cef57b36a8e6be5b982c0293e694a7dafc2086e93d80dec612922f5b28ee1429b56c64fb029f05743345769364ee24b76bd727705075a680beed42b13eb96eff99f25addfcfb291414b1d7ec2b48b446f808d496444ad5fff79cba88fc0c60151f6fd0e1263c3f96d31",
+			"peso": 0
+		}
+	],
+	"exames_lista": [
+		{
+			"uuid": "4d08601f-73a1-48ba-bff1-d1da884e4bd0",
+			"tipo": "Auscuta Cardiaca",
+			"categoria": "fisico",
+			"regiao": "Foco Aórtico",
+			"diagnostico": "Normal",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/physical_exam_files/62540ae3-513e-43a0-b655-a38b50091c86-auscuta-cardiaca-foco-aortico-normal.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=3b9de1cb1dbe23b683c68aa28b3cdec4b2ece92d66b4b615f5b8214f1d4c2b8fca692d8eafc82fb8df1628768b35fbd0930b785766837814ac8721810219d7987a582fb8f05d80696b65d561a914e3875d4299011c87af809dbf40da0b013e5d1bb041aaea28e530226a323722fc78ea7d467e2cae5f3c9f71fc4b14d7243657d3c1cf3444401386d9e62e4bfcb5388c5ce37ec3878bf4502f57f106df6d77dbbab8f0050688cb825f8e8f2592fcbca6141cdf1d1dffcd34a9f696c76b25008c81bb903c9f99dde86c18987312d6d93f3abfb6df64add6fcb9f33e7b468cd8591b837b5605635d454734b2178ca0c5cd307f1d1543a1870ef9fa2528bf7f1eca",
+			"peso": 0
+		},
+		{
+			"uuid": "6679bd99-0ccd-4e0e-a8d9-e4572fac9fb1",
+			"tipo": "Ausculta Pulmonar",
+			"categoria": "fisico",
+			"regiao": "Posterior Esquerdo Medial",
+			"diagnostico": "Normal",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/physical_exam_files/25e4acf8-e0fe-4eab-a015-61b64d8041d2-ausculta-pulmonar-posterior-esquerdo-medial-normal.mp3?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=2db8c4357ce4502ee28e876d4bcd623c0e722a32bb0329a03b1c5ae933c092c74d7f85dab744865f45397fbc761542f5612f82d63acf42c1f48a7076bbc6b1a626d5c1f241e167d5cd713064ab8d56dad2006de0ece3915d53824bcc9c7e7deedf7b911d2041ff8eaf7b4ace633beac1517fa4cee556eb33838c0b2bc7fd7666a6f2a7288f8725738bb73bb07e69b50e377810583a7c952ea8a7e5f8f245d6c8b5385e1f7e130accf4028c71a870c4ff61a52500565000c996a854a4ed58dd70d977b220badecedf7b46b303e09e27c18e3058b800d6b45d76e26ead2c6a5c28395fa73aa1e87922dad066974641c349bb5387a70dd2ee26e9901f6440858624",
+			"peso": 0
+		},
+		{
+			"uuid": "b5ca7081-6f9e-4bf3-b993-f15b49b5fa26",
+			"tipo": "Ressonância Magnética",
+			"categoria": "imagem",
+			"regiao": "Coluna lombar sagital",
+			"descricao": " RM da coluna lombar no plano sagital mostrando lesão focal no corpo vertebral de L2 descrita como isointensa na ponderações T1 (seta amarela em 1a’) e levemente hiperintensa em T2 (seta branca em 1b’) e STIR (seta azul em 1c’). Inicialmente, a lesão foi interpretada como provável hemangioma pelo sinal isointenso. Na época não foi percebido que a medula óssea apresentava sinal difusamente reduzido em todos os corpos vertebrais em T1 (setas vermelhas). Na figura 1a’ ampliada (1d) estão as medidas de sinal para comparação do sinal da lesão em L2 (círculo amarelo = 130) e da medula óssea dos demais corpos vertebrais (círculo vermelho = 158) com o sinal do músculo (140).",
+			"diagnostico": "Mieloma múltiplo",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/imagem_exam_files/b279c447-b139-4ce3-bcd0-ab7a0d78115f-ressonancia-magnetica-coluna-lombar-sagital.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=2a361813f8d1e40d27801888ecf720da2f13e51ec2d819057c6bcf3ea7f9f252f5f6165958003860cedcb0391a28da6503e72d72410cb83f5bac84ded41a3edcf8cc2d896f964ae4250d5efa5c67930e2c60bf8d1ed1a5485421f9ba896fc7d331b83467149a4d8d728008d4ed7c917540ee717c89eab48c1b35ecddfa6fe8c99db32bd70c7130b598b5bcf77928b7958b2f1778b6182647ad54d6868c537fd0b80017df2168f8624cbe77e9f7b99e9060be4e3caf8d139eb5174e51b73c2c36a3f1140b1fe47303e09909830c02e9afa9a96c7b3eb3a214951f1f03abfdd525c949c19913ac04edb8f8c52190760c436f4d8007aad869fa8b8de7891ef5e51d",
+			"peso": 0
+		},
+		{
+			"uuid": "c6434687-0a02-4bb2-9aa7-75e6fda3357c",
+			"tipo": "Tomografia Computadorizada",
+			"categoria": "imagem",
+			"regiao": "Coluna lombar",
+			"descricao": "Reconstrução tomográfica da torácica inferior e lombar com a técnica MPR nos planos sagital (3a’) e coronal (3b’) com filtro de osso também mostrando múltiplas lesões líticas esparsas em todos os corpos vertebrais semelhante ao encontrado na coluna cervical (figura 2), com destaque para lesão lítica maior em L2, em correspondência com a alteração focal do sinal na RM vista na figura 1.",
+			"diagnostico": "Mieloma múltiplo",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/imagem_exam_files/5a753a84-1d2f-49c3-be3a-a9adcbc6eac4-tomografia-computadorizada-coluna-lombar.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=517fba6a9ffc19d9e33976c28cfc9e224e14900259ec39005fa8c2ef02d5d3139dd13efc6d6f6bef031df5370cc7a59c0155a4cadddf629bb8081c06e2efbc9095ee79afcba700b9462108dde252758c49dd2253cc75048130f194034a20be36f91d3d8bf4a7e5d58e594f1f354db0779dc6773a8ad8bf8c2d365330afda48ea1be6539d123873f437dcf568a15da71b1343ad98495e913e8aa17288a9b91c2372d1cc6f22d2d6270eeaacc2eb16ee7f230d38da9c04e59e11df2a33e2e1c827e01208bc4ff347bbb05f061dce69354d48933f95052d2e4716ef8954c4786a98de8dd4efd6fa4959b5da00720a084439a44674807f1b987f49c88da8379f5e4b",
+			"peso": 0
+		},
+		{
+			"uuid": "145383a0-71a0-4b5e-9ade-d8f9978b1db6",
+			"tipo": "Ressonância Magnética",
+			"categoria": "imagem",
+			"regiao": "Coluna cervical",
+			"descricao": "Reconstrução tomográfica da coluna cervical com a técnica MPR nos planos sagital (2a’) e coronal (2b’) com filtro de osso mostrando múltiplas lesões líticas na coluna cervical.",
+			"diagnostico": "Mieloma múltiplo",
+			"data": "https://storage.googleapis.com/bucket-reserva-mh/media/imagem_exam_files/168c7fda-f3e4-4fb7-8445-cedfcf1e9db9-ressonancia-magnetica-coluna-cervical.png?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=apibackupmh%40metahealth-443021.iam.gserviceaccount.com%2F20250326%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250326T122328Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=264104c4ffb5ba48603c2314e7eabe6de38dfbaa635102dc51f8691a77ef24a563dd10dc72bd95999bab919d7fd3f346ef99d93f1b629b8aa6f78d09419fbf762657fd43b4a559ca4c14a739ad63a206215435421abdb1e12b3cea725208cbc1366b726386ee22038e40738bb583ab4f95f2ef53e9493c74913847f0e7a240c9d76b1290465c9a6accb1d906c4687d98b3e31fd0e7cfb2e344f367d1227bfc95fdbbcb97d820640b0f6962673c46d4e310f7dfed23e4d9b9a8109bc0dc6bc551a246e38713e88b13c8b6b720adc4dab0746f1fff0331d4ccf631ee03eb43b425feac1e6f76d9efe3cd7d26b1a373ccc063e031d766f5338ea3a2a2101e8c2afe",
+			"peso": 0
+		},
+		{
+			"uuid": "e557135b-4617-41c2-95b8-489bf7cfacfe",
+			"tipo": "Hemograma Completo",
+			"categoria": "laboratorio",
+			"regiao": "",
+			"diagnostico": "Mieloma múltiplo",
+			"data": "Hemoglobina de 6,7 g/dL, hematócrito de 20,7%, VCM 88 fL, HCM 31 g/dL. Morfologia eritrocitária evidenciando formação de hemácias em Rouleaux. Leucócitos: 4.900",
+			"peso": 0
+		},
+		{
+			"uuid": "09c70f93-0e3d-4991-825e-eb264382ab9f",
+			"tipo": "Creatinina e Ureia",
+			"categoria": "laboratorio",
+			"regiao": "",
+			"diagnostico": "Mieloma múltiplo",
+			"data": "Creatinina = 2 mg/dL",
+			"peso": 0
+		}
+	]
+}

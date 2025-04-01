@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: df572ea1fc1883947b6100118981ccb5
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Base
+  - first:
+      1: 100002
+    second: Base.001
+  - first:
+      1: 100004
+    second: Bulb
+  - first:
+      1: 100006
+    second: Bulb.001
+  - first:
+      1: 100008
+    second: Ceiling Fan_MD_01_01
+  - first:
+      1: 100010
+    second: Chair_MD_01_01
+  - first:
+      1: 100012
+    second: Chair_MD_02_01
+  - first:
+      1: 100014
+    second: Cushion
+  - first:
+      1: 100016
+    second: Cushion.001
+  - first:
+      1: 100018
+    second: Fan Blades
+  - first:
+      1: 100020
+    second: GlassTop
+  - first:
+      1: 100022
+    second: Magazine Rack_MD_01_01
+  - first:
+      1: 100024
+    second: Magazine Rack_MD_02_01
+  - first:
+      1: 100026
+    second: Magazine Wal lRack_MD_01_01
+  - first:
+      1: 100028
+    second: Magazine_01_01
+  - first:
+      1: 100030
+    second: Metal Ball_MD_01
+  - first:
+      1: 100032
+    second: Pamphlet Single_MD_01_01
+  - first:
+      1: 100034
+    second: Pamphlet Wall Multiple_01_01
+  - first:
+      1: 100036
+    second: Pamphlet Wall Multiple_02_01
+  - first:
+      1: 100038
+    second: Pamphlet Wall Multiple_03_01
+  - first:
+      1: 100040
+    second: Pamphlet Wall Single_01_01
+  - first:
+      1: 100042
+    second: Pamphlet_01_01
+  - first:
+      1: 100044
+    second: Picture
+  - first:
+      1: 100046
+    second: Picture Frame_MD_01_01
+  - first:
+      1: 100048
+    second: Picture Frame_MD_02_01
+  - first:
+      1: 100050
+    second: Picture.001
+  - first:
+      1: 100052
+    second: Plant
+  - first:
+      1: 100054
+    second: Plant.001
+  - first:
+      1: 100056
+    second: Plant_MD_01_01
+  - first:
+      1: 100058
+    second: Plant_MD_02_01
+  - first:
+      1: 100060
+    second: Plastic
+  - first:
+      1: 100062
+    second: //RootNode
+  - first:
+      1: 100064
+    second: Room Table_MD_01_01
+  - first:
+      1: 100066
+    second: Room Table_MD_02_01
+  - first:
+      1: 100068
+    second: Room Table_MD_03_01
+  - first:
+      1: 100070
+    second: Room Table_MD_04_01
+  - first:
+      1: 100072
+    second: Shade
+  - first:
+      1: 100074
+    second: Shade.001
+  - first:
+      1: 100076
+    second: ShadeHolder
+  - first:
+      1: 100078
+    second: ShadeHolder.001
+  - first:
+      1: 100080
+    second: Side Table_MD_01_01
+  - first:
+      1: 100082
+    second: Side Table_MD_02_01
+  - first:
+      1: 100084
+    second: Side Table_MD_03_01
+  - first:
+      1: 100086
+    second: Table Lamp_MD_01_01
+  - first:
+      1: 100088
+    second: Table Lamp_MD_02_01
+  - first:
+      1: 100090
+    second: Table Top
+  - first:
+      1: 100092
+    second: Table Top Glass.001
+  - first:
+      1: 100094
+    second: Top
+  - first:
+      4: 400000
+    second: Base
+  - first:
+      4: 400002
+    second: Base.001
+  - first:
+      4: 400004
+    second: Bulb
+  - first:
+      4: 400006
+    second: Bulb.001
+  - first:
+      4: 400008
+    second: Ceiling Fan_MD_01_01
+  - first:
+      4: 400010
+    second: Chair_MD_01_01
+  - first:
+      4: 400012
+    second: Chair_MD_02_01
+  - first:
+      4: 400014
+    second: Cushion
+  - first:
+      4: 400016
+    second: Cushion.001
+  - first:
+      4: 400018
+    second: Fan Blades
+  - first:
+      4: 400020
+    second: GlassTop
+  - first:
+      4: 400022
+    second: Magazine Rack_MD_01_01
+  - first:
+      4: 400024
+    second: Magazine Rack_MD_02_01
+  - first:
+      4: 400026
+    second: Magazine Wal lRack_MD_01_01
+  - first:
+      4: 400028
+    second: Magazine_01_01
+  - first:
+      4: 400030
+    second: Metal Ball_MD_01
+  - first:
+      4: 400032
+    second: Pamphlet Single_MD_01_01
+  - first:
+      4: 400034
+    second: Pamphlet Wall Multiple_01_01
+  - first:
+      4: 400036
+    second: Pamphlet Wall Multiple_02_01
+  - first:
+      4: 400038
+    second: Pamphlet Wall Multiple_03_01
+  - first:
+      4: 400040
+    second: Pamphlet Wall Single_01_01
+  - first:
+      4: 400042
+    second: Pamphlet_01_01
+  - first:
+      4: 400044
+    second: Picture
+  - first:
+      4: 400046
+    second: Picture Frame_MD_01_01
+  - first:
+      4: 400048
+    second: Picture Frame_MD_02_01
+  - first:
+      4: 400050
+    second: Picture.001
+  - first:
+      4: 400052
+    second: Plant
+  - first:
+      4: 400054
+    second: Plant.001
+  - first:
+      4: 400056
+    second: Plant_MD_01_01
+  - first:
+      4: 400058
+    second: Plant_MD_02_01
+  - first:
+      4: 400060
+    second: Plastic
+  - first:
+      4: 400062
+    second: //RootNode
+  - first:
+      4: 400064
+    second: Room Table_MD_01_01
+  - first:
+      4: 400066
+    second: Room Table_MD_02_01
+  - first:
+      4: 400068
+    second: Room Table_MD_03_01
+  - first:
+      4: 400070
+    second: Room Table_MD_04_01
+  - first:
+      4: 400072
+    second: Shade
+  - first:
+      4: 400074
+    second: Shade.001
+  - first:
+      4: 400076
+    second: ShadeHolder
+  - first:
+      4: 400078
+    second: ShadeHolder.001
+  - first:
+      4: 400080
+    second: Side Table_MD_01_01
+  - first:
+      4: 400082
+    second: Side Table_MD_02_01
+  - first:
+      4: 400084
+    second: Side Table_MD_03_01
+  - first:
+      4: 400086
+    second: Table Lamp_MD_01_01
+  - first:
+      4: 400088
+    second: Table Lamp_MD_02_01
+  - first:
+      4: 400090
+    second: Table Top
+  - first:
+      4: 400092
+    second: Table Top Glass.001
+  - first:
+      4: 400094
+    second: Top
+  - first:
+      21: 2100000
+    second: No Name
+  - first:
+      23: 2300000
+    second: Base
+  - first:
+      23: 2300002
+    second: Base.001
+  - first:
+      23: 2300004
+    second: Bulb
+  - first:
+      23: 2300006
+    second: Bulb.001
+  - first:
+      23: 2300008
+    second: Ceiling Fan_MD_01_01
+  - first:
+      23: 2300010
+    second: Chair_MD_01_01
+  - first:
+      23: 2300012
+    second: Chair_MD_02_01
+  - first:
+      23: 2300014
+    second: Cushion
+  - first:
+      23: 2300016
+    second: Cushion.001
+  - first:
+      23: 2300018
+    second: Fan Blades
+  - first:
+      23: 2300020
+    second: GlassTop
+  - first:
+      23: 2300022
+    second: Magazine Rack_MD_01_01
+  - first:
+      23: 2300024
+    second: Magazine Rack_MD_02_01
+  - first:
+      23: 2300026
+    second: Magazine Wal lRack_MD_01_01
+  - first:
+      23: 2300028
+    second: Magazine_01_01
+  - first:
+      23: 2300030
+    second: Metal Ball_MD_01
+  - first:
+      23: 2300032
+    second: Pamphlet Single_MD_01_01
+  - first:
+      23: 2300034
+    second: Pamphlet Wall Multiple_01_01
+  - first:
+      23: 2300036
+    second: Pamphlet Wall Multiple_02_01
+  - first:
+      23: 2300038
+    second: Pamphlet Wall Multiple_03_01
+  - first:
+      23: 2300040
+    second: Pamphlet Wall Single_01_01
+  - first:
+      23: 2300042
+    second: Pamphlet_01_01
+  - first:
+      23: 2300044
+    second: Picture
+  - first:
+      23: 2300046
+    second: Picture Frame_MD_01_01
+  - first:
+      23: 2300048
+    second: Picture Frame_MD_02_01
+  - first:
+      23: 2300050
+    second: Picture.001
+  - first:
+      23: 2300052
+    second: Plant
+  - first:
+      23: 2300054
+    second: Plant.001
+  - first:
+      23: 2300056
+    second: Plant_MD_01_01
+  - first:
+      23: 2300058
+    second: Plant_MD_02_01
+  - first:
+      23: 2300060
+    second: Plastic
+  - first:
+      23: 2300062
+    second: Room Table_MD_01_01
+  - first:
+      23: 2300064
+    second: Room Table_MD_02_01
+  - first:
+      23: 2300066
+    second: Room Table_MD_03_01
+  - first:
+      23: 2300068
+    second: Room Table_MD_04_01
+  - first:
+      23: 2300070
+    second: Shade
+  - first:
+      23: 2300072
+    second: Shade.001
+  - first:
+      23: 2300074
+    second: ShadeHolder
+  - first:
+      23: 2300076
+    second: ShadeHolder.001
+  - first:
+      23: 2300078
+    second: Side Table_MD_01_01
+  - first:
+      23: 2300080
+    second: Side Table_MD_02_01
+  - first:
+      23: 2300082
+    second: Side Table_MD_03_01
+  - first:
+      23: 2300084
+    second: Table Lamp_MD_01_01
+  - first:
+      23: 2300086
+    second: Table Lamp_MD_02_01
+  - first:
+      23: 2300088
+    second: Table Top
+  - first:
+      23: 2300090
+    second: Table Top Glass.001
+  - first:
+      23: 2300092
+    second: Top
+  - first:
+      33: 3300000
+    second: Base
+  - first:
+      33: 3300002
+    second: Base.001
+  - first:
+      33: 3300004
+    second: Bulb
+  - first:
+      33: 3300006
+    second: Bulb.001
+  - first:
+      33: 3300008
+    second: Ceiling Fan_MD_01_01
+  - first:
+      33: 3300010
+    second: Chair_MD_01_01
+  - first:
+      33: 3300012
+    second: Chair_MD_02_01
+  - first:
+      33: 3300014
+    second: Cushion
+  - first:
+      33: 3300016
+    second: Cushion.001
+  - first:
+      33: 3300018
+    second: Fan Blades
+  - first:
+      33: 3300020
+    second: GlassTop
+  - first:
+      33: 3300022
+    second: Magazine Rack_MD_01_01
+  - first:
+      33: 3300024
+    second: Magazine Rack_MD_02_01
+  - first:
+      33: 3300026
+    second: Magazine Wal lRack_MD_01_01
+  - first:
+      33: 3300028
+    second: Magazine_01_01
+  - first:
+      33: 3300030
+    second: Metal Ball_MD_01
+  - first:
+      33: 3300032
+    second: Pamphlet Single_MD_01_01
+  - first:
+      33: 3300034
+    second: Pamphlet Wall Multiple_01_01
+  - first:
+      33: 3300036
+    second: Pamphlet Wall Multiple_02_01
+  - first:
+      33: 3300038
+    second: Pamphlet Wall Multiple_03_01
+  - first:
+      33: 3300040
+    second: Pamphlet Wall Single_01_01
+  - first:
+      33: 3300042
+    second: Pamphlet_01_01
+  - first:
+      33: 3300044
+    second: Picture
+  - first:
+      33: 3300046
+    second: Picture Frame_MD_01_01
+  - first:
+      33: 3300048
+    second: Picture Frame_MD_02_01
+  - first:
+      33: 3300050
+    second: Picture.001
+  - first:
+      33: 3300052
+    second: Plant
+  - first:
+      33: 3300054
+    second: Plant.001
+  - first:
+      33: 3300056
+    second: Plant_MD_01_01
+  - first:
+      33: 3300058
+    second: Plant_MD_02_01
+  - first:
+      33: 3300060
+    second: Plastic
+  - first:
+      33: 3300062
+    second: Room Table_MD_01_01
+  - first:
+      33: 3300064
+    second: Room Table_MD_02_01
+  - first:
+      33: 3300066
+    second: Room Table_MD_03_01
+  - first:
+      33: 3300068
+    second: Room Table_MD_04_01
+  - first:
+      33: 3300070
+    second: Shade
+  - first:
+      33: 3300072
+    second: Shade.001
+  - first:
+      33: 3300074
+    second: ShadeHolder
+  - first:
+      33: 3300076
+    second: ShadeHolder.001
+  - first:
+      33: 3300078
+    second: Side Table_MD_01_01
+  - first:
+      33: 3300080
+    second: Side Table_MD_02_01
+  - first:
+      33: 3300082
+    second: Side Table_MD_03_01
+  - first:
+      33: 3300084
+    second: Table Lamp_MD_01_01
+  - first:
+      33: 3300086
+    second: Table Lamp_MD_02_01
+  - first:
+      33: 3300088
+    second: Table Top
+  - first:
+      33: 3300090
+    second: Table Top Glass.001
+  - first:
+      33: 3300092
+    second: Top
+  - first:
+      43: 4300000
+    second: Chair_MD_02_01
+  - first:
+      43: 4300002
+    second: Base.001
+  - first:
+      43: 4300004
+    second: Cushion
+  - first:
+      43: 4300006
+    second: Room Table_MD_02_01
+  - first:
+      43: 4300008
+    second: GlassTop
+  - first:
+      43: 4300010
+    second: Room Table_MD_01_01
+  - first:
+      43: 4300012
+    second: Top
+  - first:
+      43: 4300014
+    second: Chair_MD_01_01
+  - first:
+      43: 4300016
+    second: Cushion.001
+  - first:
+      43: 4300018
+    second: Side Table_MD_01_01
+  - first:
+      43: 4300020
+    second: Base
+  - first:
+      43: 4300022
+    second: Table Lamp_MD_01_01
+  - first:
+      43: 4300024
+    second: Bulb
+  - first:
+      43: 4300026
+    second: ShadeHolder
+  - first:
+      43: 4300028
+    second: Shade
+  - first:
+      43: 4300030
+    second: Side Table_MD_02_01
+  - first:
+      43: 4300032
+    second: Table Top Glass.001
+  - first:
+      43: 4300034
+    second: Ceiling Fan_MD_01_01
+  - first:
+      43: 4300036
+    second: Fan Blades
+  - first:
+      43: 4300038
+    second: Picture Frame_MD_01_01
+  - first:
+      43: 4300040
+    second: Picture
+  - first:
+      43: 4300042
+    second: Picture Frame_MD_02_01
+  - first:
+      43: 4300044
+    second: Picture.001
+  - first:
+      43: 4300046
+    second: Magazine Rack_MD_01_01
+  - first:
+      43: 4300048
+    second: Magazine Wal lRack_MD_01_01
+  - first:
+      43: 4300050
+    second: Magazine_01_01
+  - first:
+      43: 4300052
+    second: Magazine Rack_MD_02_01
+  - first:
+      43: 4300054
+    second: Pamphlet_01_01
+  - first:
+      43: 4300056
+    second: Pamphlet Single_MD_01_01
+  - first:
+      43: 4300058
+    second: Plastic
+  - first:
+      43: 4300060
+    second: Pamphlet Wall Multiple_01_01
+  - first:
+      43: 4300062
+    second: Pamphlet Wall Multiple_02_01
+  - first:
+      43: 4300064
+    second: Pamphlet Wall Multiple_03_01
+  - first:
+      43: 4300066
+    second: Pamphlet Wall Single_01_01
+  - first:
+      43: 4300068
+    second: Room Table_MD_03_01
+  - first:
+      43: 4300070
+    second: Room Table_MD_04_01
+  - first:
+      43: 4300072
+    second: Side Table_MD_03_01
+  - first:
+      43: 4300074
+    second: Table Top
+  - first:
+      43: 4300076
+    second: Plant_MD_01_01
+  - first:
+      43: 4300078
+    second: Plant
+  - first:
+      43: 4300080
+    second: Plant_MD_02_01
+  - first:
+      43: 4300082
+    second: Plant.001
+  - first:
+      43: 4300084
+    second: Metal Ball_MD_01
+  - first:
+      43: 4300086
+    second: Table Lamp_MD_02_01
+  - first:
+      43: 4300088
+    second: Bulb.001
+  - first:
+      43: 4300090
+    second: ShadeHolder.001
+  - first:
+      43: 4300092
+    second: Shade.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 0
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
