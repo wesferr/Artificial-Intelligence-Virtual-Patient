@@ -36,7 +36,6 @@ async def generate_audio(text):
 
 async def answer_text(messages, audio_data, queue, evaluation_times):
 
-    
 
     tts_actual_time = time.time_ns()
     audio, sr = librosa.load(io.BytesIO(audio_data), sr=16000)  # sr=16000 é a taxa de amostragem que o Whisper espera
@@ -48,7 +47,7 @@ async def answer_text(messages, audio_data, queue, evaluation_times):
 
     text_result = result["text"]
     print(text_result)
-    messages.append({"role": "system", "content": text_result,},)
+    messages.append({"role": "user", "content": text_result,},)
     temporary_buffer = ai_response = ""
 
     stream = ollama.chat(model='gemma3:4b', messages=messages, stream=True,)

@@ -21,20 +21,13 @@ except Exception as e:
         "receive_times": [],
     }
 
-actual_time = 0
+actual_time2 = time.time_ns()
 
 data = open("context2.json", "r", encoding='utf-8').read()
 data = json.loads(data)
 context = '''
-Se o médico fizer uma saudação (ex: 'Bom dia', 'Olá'), responda apenas: 'Bom dia, doutor' ou 'Oi, doutor' e se apresente.
-Se for uma pergunta médica, responda conforme os dados abaixo, em uma única frase simples.
-
-Você é {0}, {2}, você responde conforme as perguntas {3}.
-Responda apenas como {0}, com base nas informações fornecidas.
-
-Nunca pule para respostas de perguntas anteriores
-Se não souber a resposta, diga: 'Não sei direito, doutor'
-
+Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
+Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
 '''
 perguntas_formatadas = "\n".join(
     [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
@@ -50,8 +43,8 @@ background = [
 ]
 
 async def send_and_recv(client, audio_data):
-    global actual_time
-    actual_time = time.time_ns()
+    global actual_time2
+    actual_time2 = time.time_ns()
     await client.send(audio_data)
 
 async def play_audio(queue, websocket):
@@ -69,26 +62,28 @@ async def handler(websocket):
     # Adiciona cliente à lista
     global background
     global evaluation_times
+    global actual_time2
     request = websocket.request
     if websocket not in clients_ai and websocket not in clients_oz:
-        actual_time = time.time_ns()
+        actual_time1 = time.time_ns()
         ping = await websocket.send("")
         pong = await websocket.recv()
-        time_delay = (time.time_ns() - actual_time)/2
+        time_delay = (time.time_ns() - actual_time1)/2
 
     try:
         async for message in websocket:
             try:
                 if message.decode().isnumeric():
+                    print(message, message.decode())
                     # print("Ping: ", message)
-                    recv_time = int(message.decode()) - time_delay
+                    recv_time = int(message.decode())
                     # open("time_diffs.json", "a").write(json.dumps({"time_recieve": recv_time}, indent=4, ensure_ascii=False))
                     evaluation_times["receive_times"].append(recv_time*1e-6)
                     continue
             except Exception as e:
                 pass
             if message == "":
-                evaluation_times["send_times"].append((time.time_ns() - actual_time - time_delay)*1e-6)
+                evaluation_times["send_times"].append((time.time_ns() - actual_time2 - time_delay)*1e-6)
                 # network_time.append((time.time_ns() - actual_time - time_delay)*1e-6)
                 # open("time_diffs.json", "a").write(json.dumps({"send_time": network_time}, indent=4, ensure_ascii=False))
                 continue
