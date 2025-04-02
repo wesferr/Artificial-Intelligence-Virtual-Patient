@@ -3,6 +3,8 @@ import websockets
 import chatbot
 import json
 import time
+import librosa
+import io
 
 # Lista de clientes conectados
 clients_ai = set()
@@ -10,18 +12,17 @@ clients_oz = set()
 time_delay = 0
 
 try:
-    evaluation_times = json.loads(open("time_diffs.json", "r", encoding='utf-8').read())
+    evaluation_times = json.loads(open("time_diffs2.json", "r", encoding='utf-8').read())
 except Exception as e:
     evaluation_times = {
         "llm_times": [],
         "tts_times": [],
         "stt_times": [],
-        "audio_times": [],
+        "sent_audio_times": [],
+        "recieved_audio_times": [],
         "send_times": [],
         "receive_times": [],
     }
-
-actual_time2 = time.time_ns()
 
 data = open("context2.json", "r", encoding='utf-8').read()
 data = json.loads(data)
@@ -43,9 +44,9 @@ background = [
 ]
 
 async def send_and_recv(client, audio_data):
-    global actual_time2
-    actual_time2 = time.time_ns()
+    ini_time = time.time_ns()
     await client.send(audio_data)
+    evaluation_times["send_times"].append((time.time_ns() - ini_time)*1e-6)
 
 async def play_audio(queue, websocket):
     while True:
@@ -62,47 +63,32 @@ async def handler(websocket):
     # Adiciona cliente à lista
     global background
     global evaluation_times
-    global actual_time2
     request = websocket.request
-    if websocket not in clients_ai and websocket not in clients_oz:
-        actual_time1 = time.time_ns()
-        ping = await websocket.send("")
-        pong = await websocket.recv()
-        time_delay = (time.time_ns() - actual_time1)/2
 
     try:
-        async for message in websocket:
-            try:
-                if message.decode().isnumeric():
-                    print(message, message.decode())
-                    # print("Ping: ", message)
-                    recv_time = int(message.decode())
-                    # open("time_diffs.json", "a").write(json.dumps({"time_recieve": recv_time}, indent=4, ensure_ascii=False))
-                    evaluation_times["receive_times"].append(recv_time*1e-6)
-                    continue
-            except Exception as e:
-                pass
-            if message == "":
-                evaluation_times["send_times"].append((time.time_ns() - actual_time2 - time_delay)*1e-6)
-                # network_time.append((time.time_ns() - actual_time - time_delay)*1e-6)
-                # open("time_diffs.json", "a").write(json.dumps({"send_time": network_time}, indent=4, ensure_ascii=False))
-                continue
+        while True:
+            # Recebe mensagem do cliente
+            message = await websocket.recv()
+            ini_time = time.time_ns()
+            message = await websocket.recv()
+            message_recieve_time = time.time_ns() - ini_time
             #Propaga a mensagem para todos os clientes conectados, exceto o remetente
+
             if request.path == "/oz":
                 clients_oz.add(websocket)
                 for client in list(clients_oz):
                     if client.state == 3:
                         clients_oz.remove(client)
-                asyncio.gather(*(send_and_recv(client, audio_data) for client in clients_oz if client != websocket))
-                # await asyncio.gather(*(client.send(message) for client in clients_oz if client != websocket))
+                asyncio.gather(*(send_and_recv(client, message) for client in clients_oz if client != websocket))
             if request.path == "/ai":
-                await websocket.send("")
+                evaluation_times["receive_times"].append(message_recieve_time*1e-6)
+                evaluation_times["recieved_audio_times"].append(librosa.get_duration(path=io.BytesIO(message))*1000)
                 clients_ai.add(websocket)
                 queue = asyncio.Queue()
                 play_task = asyncio.create_task(play_audio(queue, websocket))
                 background = await chatbot.answer_text(background, message, queue, evaluation_times)
 
-            open("time_diffs.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
+            open("time_diffs2.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
     except websockets.exceptions.ConnectionClosed as e:
         print(e)
 

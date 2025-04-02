@@ -42,8 +42,7 @@ async def answer_text(messages, audio_data, queue, evaluation_times):
     audio = torch.from_numpy(audio).to('cuda')
     result = model.transcribe(audio)
     tts_time_diff = time.time_ns() - tts_actual_time
-    # tts_time_diffs.append(tts_time_diff*1e-6)
-    evaluation_times["tts_times"].append(tts_time_diff*1e-6)
+    evaluation_times["stt_times"].append(tts_time_diff*1e-6)
 
     text_result = result["text"]
     print(text_result)
@@ -67,24 +66,20 @@ async def answer_text(messages, audio_data, queue, evaluation_times):
             stt_actual_time = time.time_ns()
             audio_data = await generate_audio(temporary_buffer)
             stt_time_diff = time.time_ns() - stt_actual_time
-            evaluation_times["stt_times"].append(stt_time_diff*1e-6)
-            # stt_time_diffs.append(stt_time_diff*1e-6)
+            evaluation_times["tts_times"].append(stt_time_diff*1e-6)
             await queue.put(audio_data)
-            evaluation_times["audio_times"].append(librosa.get_duration(path=io.BytesIO(audio_data))*1000)
+            evaluation_times["sent_audio_times"].append(librosa.get_duration(path=io.BytesIO(audio_data))*1000)
             
             print(temporary_buffer, end="", flush=True)
             temporary_buffer = ""
             llm_actual_time = time.time_ns()
+            evaluation_times["llm_times"].append(-1)
 
-            
         else:
             temporary_buffer += token
             llm_time_diff = time.time_ns() - llm_actual_time
             llm_actual_time = time.time_ns()
-            # llm_time_diffs.append(llm_time_diff*1e-6)
             evaluation_times["llm_times"].append(llm_time_diff*1e-6)
-
-    # open("time_diffs.json", "a").write(json.dumps({"LLM": llm_time_diffs, "TTS": tts_time_diffs, "STT": stt_time_diffs, "Audio": audio_time}, indent=4, ensure_ascii=False))
 
     await queue.put(None)
     messages.append({"role": "assistant", "content": ai_response,},)

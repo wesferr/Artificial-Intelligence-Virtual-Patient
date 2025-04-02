@@ -17,8 +17,6 @@ RATE = 24000
 CHUNK = 1024
 OUTPUT_FILENAME = "audio_recorded.wav"
 
-actual_time = 0
-
 class AudioRecorder:
     def __init__(self, master):
         self.server_uri = "ws://192.168.0.120:8765/ai"
@@ -59,19 +57,16 @@ class AudioRecorder:
         """Estabelece conexão com o servidor WebSocket."""
         try:
             self.websocket = await websockets.connect(self.server_uri, ping_interval=20, ping_timeout=20)
-            ping = await self.websocket.recv()
-            pong = await self.websocket.send("")
         except Exception as e:
             print(f"Erro ao conectar ao WebSocket: {e}")
 
     async def send_audio(self):
-        global actual_time
         """Envia o áudio gravado via WebSocket."""
         if self.websocket:
             try:
                 with open(OUTPUT_FILENAME, "rb") as wf:
                     data = wf.read()
-                    actual_time = time.time_ns()
+                    await self.websocket.send("")
                     await self.websocket.send(data)
                     print("Áudio enviado com sucesso!")
 
@@ -112,18 +107,12 @@ class AudioRecorder:
         asyncio.run_coroutine_threadsafe(self.send_audio(), self.loop)  # Envia áudio sem bloquear a GUI
 
     async def receive_audio(self):
-        global actual_time
         """Recebe áudio do servidor e adiciona à fila"""
         print("Aguardando áudio do servidor...")
         while self.is_running:
             try:
                 data = await self.websocket.recv()
-                if data == "" and actual_time != 0:
-                    network_time = (time.time_ns() - actual_time)
-                    await self.websocket.send(str(network_time).encode())
-                    actual_time = 0
                 print("Áudio recebido do servidor")
-                await self.websocket.send("") # Envia um ping para o servidor
                 await self.audio_queue.put(data)  # Adiciona áudio na fila assíncrona
                 self.label.config(text="Áudio recebido e adicionado à fila")
             except Exception as e:
