@@ -99,6 +99,7 @@ public class SocketManager : MonoBehaviour
 
             if (targetSocket.State == WebSocketState.Open)
             {
+                await targetSocket.SendAsync(new ArraySegment<byte>(new byte[] {0}), WebSocketMessageType.Binary, true, CancellationToken.None);
                 await targetSocket.SendAsync(new ArraySegment<byte>(audioData), WebSocketMessageType.Binary, true, CancellationToken.None);
                 Debug.Log($"Audio file sent to {socketType}.");
             }

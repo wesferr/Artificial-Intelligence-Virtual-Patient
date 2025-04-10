@@ -57,7 +57,11 @@ async def answer_text(messages, audio_data, queue, evaluation_times):
         ai_response += token
 
         ends_with_number = bool(re.fullmatch(r"^[a-zA-Z\s]+[0-9]+[.,]$", temporary_buffer))
-        if ("." in token or "," in token) and not ends_with_number:
+        if ("." in token) and not ends_with_number:
+
+            llm_time_diff = time.time_ns() - llm_actual_time
+            llm_actual_time = time.time_ns()
+            evaluation_times["llm_times"].append(llm_time_diff*1e-6)
 
             if temporary_buffer.lower() == " doutor":
                 temporary_buffer = ""
@@ -72,14 +76,10 @@ async def answer_text(messages, audio_data, queue, evaluation_times):
             
             print(temporary_buffer, end="", flush=True)
             temporary_buffer = ""
-            llm_actual_time = time.time_ns()
-            evaluation_times["llm_times"].append(-1)
+            
 
         else:
             temporary_buffer += token
-            llm_time_diff = time.time_ns() - llm_actual_time
-            llm_actual_time = time.time_ns()
-            evaluation_times["llm_times"].append(llm_time_diff*1e-6)
 
     await queue.put(None)
     messages.append({"role": "assistant", "content": ai_response,},)
@@ -93,7 +93,7 @@ async def main():
     data = json.loads(data)
     context = '''
     Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
-    Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
+    Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado, e não responda novamente uma pergunta anterior.
     '''
     perguntas_formatadas = "\n".join(
         [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]

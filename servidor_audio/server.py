@@ -12,7 +12,7 @@ clients_oz = set()
 time_delay = 0
 
 try:
-    evaluation_times = json.loads(open("time_diffs2.json", "r", encoding='utf-8').read())
+    evaluation_times = json.loads(open("time_diffs4.json", "r", encoding='utf-8').read())
 except Exception as e:
     evaluation_times = {
         "llm_times": [],
@@ -28,7 +28,9 @@ data = open("context2.json", "r", encoding='utf-8').read()
 data = json.loads(data)
 context = '''
 Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
-Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
+Responda apenas como {0}, com base nas informações fornecidas.
+Responda em uma unica sentença, e somente oque foi perguntado, e não responda uma pergunta anterior.
+Não use a palavra "doutor" ou "doutora" em suas respostas.
 '''
 perguntas_formatadas = "\n".join(
     [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
@@ -88,7 +90,7 @@ async def handler(websocket):
                 play_task = asyncio.create_task(play_audio(queue, websocket))
                 background = await chatbot.answer_text(background, message, queue, evaluation_times)
 
-            open("time_diffs2.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
+            open("time_diffs4.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
     except websockets.exceptions.ConnectionClosed as e:
         print(e)
 
