@@ -1,0 +1,272 @@
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Qual é o teu nome?
+Meu nome é Geraldo O que festo vir aqui hoje?
+Eu vim aqui hoje com falta de ar e desmaios Тайда 1.
+Eu vim aqui hoje com falta de ar e desmaios Qual a sua idade?
+Sou 64 anos Tu faz exercício físico?
+Não, não faço exercício físico Já teve algum problema assim antes?
+Não, nunca tive problemas como este antes Tu é fumante?
+Fumei por muitos anos, doutor Mas parei há 10 anos Fez algum exame?
+Não, ainda não fiz nenhum exameTraceback (most recent call last):
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 100, in main
+    await server.wait_closed()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\asyncio\server.py", line 494, in wait_closed     
+    await asyncio.shield(self.closed_waiter)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 103, in <module>
+    asyncio.run(main())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Bom dia, como é que é seu nome?
+Meu nome é Geraldo O que você está sentindo então?
+Estou sentindo falta de ar, principalmente sentado, e uma dor de cansaço nas costelas e na lombar Há quanto tempo você está sentindo falta de ar?
+Uns dez meses, mais ou menos Qual como remédio para tratar isso?
+Eu tomo hidroclorotiazida e enalapril para a pressão, e dipirona e paracetamol quando a dor aperta Tem catarro ou alguma tosse?
+Não estou com tosse Apenas dor no pulmão.
+Não, não é dor no pulmão É falta de ar in our studies as well as analysis.
+Eu não faço estudos, sou apenas Geraldo Não se sente dor nas costas?
+Sim, sinto dores na lombar, como se fosse por causa da idade Eu falo aqui que você gosta de jogar.
+Eu não gosto de jogar, sou apenas Geraldo Você pode fazer algum tipo de exercício?
+Não consigo mais cuidar da minha casa, estou muito fracoTraceback (most recent call last):
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 100, in main
+    await server.wait_closed()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\asyncio\server.py", line 494, in wait_closed
+    await asyncio.shield(self.closed_waiter)
+    await asyncio.shield(self.closed_waiter)
+asyncio.exceptions.CancelledError
+
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 103, in <module>
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 103, in <module>
+    asyncio.run(main())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    asyncio.run(main())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Isn't that good? Hello Is that Hm So, I'm going to finish it. So, I'm going to finish it.
+Fumava uma carteira dos 14 aos 54 anos Pode repetir, por favor.
+Fumava uma carteira dos 14 aos 54 anos Poderia me dizer quais sintomas, o que tu está sentindo?
+Sinto falta de ar até sentado, me sinto fraco e tenho dores nas costelas e na lombar Isso é bem provável que seria por causa do cigarro.
+Fumei por muitos anos, doutor Mas parei há 10 anos Como é a dor que está sentindo? Ela piorou nos últimos anos, nos últimos meses?
+É uma dor de cansaço, como se estivesse pesado Ela dói o tempo todo, independente do que eu faça Ela tomou algum medicamento?
+Sim, dois para a pressão Hidroclorotiazida e Enalapril Como é a tua alimentação? Tu costuma fazer exercícios?
+Gosto muito de comer bem Tenho até uma hortinha em casa Não costumo fazer exercícios Вернитесь, это не ваша работа? Да, это моя работа Это не ваша работа? Да, это моя работа Да, это моя работа 
+Não costumo fazer exercícios O que é que você trabalha?
+Sou aposentado Além de fumar, tem alguns outros maus hábitos? Bebe ou algo do tipo?
+Não estou O que que tu tava fazendo ontem às 10h45 da manhã?
+Não me lembro Ah, isso pode ser sintoma de algum problema de memória?
+Não sinto muita fome Qual foi a ultima vez que tu comeu e o que tu comeu?
+Não me lembro
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Eu não sei, mas eu sou só pra ele que responde. Posso fazer já? Quais seriam os seus sintomas?
+Fumo uma carteira dos 14 aos 54 anos هل يمكنك التعليق؟
+The text length exceeds the character limit of 203 for language 'pt', this might cause truncated audio.
+Eu sou Geraldo, e estou aqui porque Paciente do sexo masculino, 64 anos, negro, aposentado, hipertenso controlado, sobrepeso, ex-tabagista (40 maços/ano), vem ao consultório com queixa de falta de ar progressiva há dez meses e desmaios há 1 mês
+O quadro de dispneia inicou aos moderados esforços, evoluindo com piora nos últimos três meses, impossibilitando a realização de atividades rotineiras como tomar banho, pentear os cabelos e se vestir Paciente também relata edema de membros inferiores, fraqueza e dor em região costal (costelasThe text length exceeds the character limit of 203 for language 'pt', this might cause truncated audio.
+
+Teve diagnóstico recente de síndrome do túnel do carpo e apresenta “dor cansada” em região lombar e membros inferiores, atribuindo estes sintomas à idade avançada, toma analgésicos comuns (dipirona e paracetamol) que relata melhorarem a dor, porém sem cessá-la , você responde conforme as perguntas Pergunta: Com o que você trabalha?, Resposta: Sou aposentado
+Pergunta: Tem diabetes?, Resposta: Não
+Pergunta: Teve perda de força física?, Resposta: Sim, me sinto cada vez mais fraco, doutor Não consigo mais cuidar da minha casa
+Pergunta: Toma alguma medicação?, Resposta: Sim, dois para a pressão
+Pergunta: Está com falta de ar?, Resposta: Sim doutor, até sentado eu sinto falta de ar
+Pergunta: O calendário vacinal está em dia?, Resposta: Sim, até a do covidTraceback (most recent call last):
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 100, in main
+    await server.wait_closed()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\asyncio\server.py", line 494, in wait_closed
+    await asyncio.shield(self.closed_waiter)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 103, in <module>
+    asyncio.run(main())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 189, in run
+    with Runner(debug=debug) as runner:
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 63, in __exit__
+    self.close()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 73, in close
+    loop.run_until_complete(loop.shutdown_default_executor())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1898, in _run_once
+    event_list = self._selector.select(timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 444, in select
+    self._poll(timeout)
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 825, in _poll
+    status = _overlapped.GetQueuedCompletionStatus(self._iocp, ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Boa tarde, qual é o seu nome?
+Meu nome é Geraldo Qual seria a sua idade?
+Sou 64 anos profissão
+Sou aposentado Quais seriam os sintomas?
+Tenho falta de ar, principalmente sentado, e me sinto cada vez mais fraco Teria algum problema cardíaco?
+Sim, tenho falta de ar e desmaios Alguma doença diagrama de cada?
+Tenho pressão alta e dore nas costelas e na lombar Tomou algum remédio?
+Sim, tomo dois remédios para a pressãoTraceback (most recent call last):
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 100, in main
+    await server.wait_closed()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\asyncio\server.py", line 494, in wait_closed
+    await asyncio.shield(self.closed_waiter)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 103, in <module>
+    asyncio.run(main())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Wait to me?
+Fumava uma carteira dos 14 aos 54 anos Oi, meu nome é João.
+Olá, João Prazer em conhecê-lo O que te trouxe aqui hoje?
+É que ando com falta de ar, sabe? E às vezes desmaio, e a gente não consegue fazer nada em casa É complicado Você já tem alguma doença diagnosticada?
+Tenho pressão alta, já fizeram umas coisas e disseram que está controlada Você fuma?
+Fumei por muitos anos, sabe? Mas parei há 10 anos Yeah
+Certo Você tomou algum remédio pra dor?
+Sim, tomo dipirona e paracetamol E a dor melhorou tomando isso?
+ या सवादर में ड़ोर।
+É uma dor de cansaço, como se estivesse pesadoTraceback (most recent call last):
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 100, in main
+    await server.wait_closed()
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\site-packages\websockets\asyncio\server.py", line 494, in wait_closed
+    await asyncio.shield(self.closed_waiter)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wesley\Documents\AIVH\servidor_audio\server.py", line 103, in <module>
+    asyncio.run(main())
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\wesley\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+PS C:\Users\wesley\Documents\AIVH\servidor_audio> python .\server.py
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.9)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Servidor WebSockets iniciado em ws://localhost:8765
+ Oi, eu sou... eu sou Gabriel... o médico.
+Fumava uma carteira dos 14 aos 54 anos E vamos fazer...
+ E o que tu sente?
+Eu sinto falta de ar até sentado E tu ainda fuma?
+Fumei por muitos anos, doutor Mas não fuma mais.
+Parei há 10 anos pratica atividade física
+Não, não pratico Qual a tua idade?
+Sou de 64 anos desde quando sente falta de arme.
+Há dez meses e já procurou auxílio médico antes de vir aqui?
+Não, não procurei Tu sente alguma dor?
+Tenho dores nas costelas e na lombar desde quando tu sente essa dor.
+Desde que começou a falta de ar A uns 10 meses então...
+Sim, sim Tu tá sentindo dor agora?
+Sim, a dor está no 7 Tu tem alergia a algum remédio?
+Não, não tenho alergia Então vou te receitar um remédio pra dor e te encaminhar para um pneumologista.
+Certo Ok, obrigado.
+De nada
