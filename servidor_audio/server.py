@@ -12,7 +12,7 @@ clients_oz = set()
 time_delay = 0
 
 try:
-    evaluation_times = json.loads(open("time_diffs4.json", "r", encoding='utf-8').read())
+    evaluation_times = json.loads(open("time_diffs2.json", "r", encoding='utf-8').read())
 except Exception as e:
     evaluation_times = {
         "llm_times": [],
@@ -28,9 +28,7 @@ data = open("context2.json", "r", encoding='utf-8').read()
 data = json.loads(data)
 context = '''
 Você é {0}, e está aqui porque {2}, você responde conforme as perguntas {3}.
-Responda apenas como {0}, com base nas informações fornecidas.
-Responda em uma unica sentença, e somente oque foi perguntado, e não responda uma pergunta anterior.
-Não use a palavra "doutor" ou "doutora" em suas respostas.
+Responda apenas como {0}, com base nas informações fornecidas. Responda em uma unica sentença, e somente oque foi perguntado.
 '''
 perguntas_formatadas = "\n".join(
     [f"Pergunta: {p['pergunta']}, Resposta: {p['resposta']}" for p in data['perguntas_lista']]
@@ -81,7 +79,9 @@ async def handler(websocket):
                 for client in list(clients_oz):
                     if client.state == 3:
                         clients_oz.remove(client)
-                asyncio.gather(*(send_and_recv(client, message) for client in clients_oz if client != websocket))
+                #message é um string tem que converter em audio
+                audio_data = await chatbot.generate_audio(message)
+                asyncio.gather(*(send_and_recv(client, audio_data) for client in clients_oz if client != websocket))
             if request.path == "/ai":
                 evaluation_times["receive_times"].append(message_recieve_time*1e-6)
                 evaluation_times["recieved_audio_times"].append(librosa.get_duration(path=io.BytesIO(message))*1000)
@@ -90,7 +90,7 @@ async def handler(websocket):
                 play_task = asyncio.create_task(play_audio(queue, websocket))
                 background = await chatbot.answer_text(background, message, queue, evaluation_times)
 
-            open("time_diffs4.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
+            open("time_diffs2.json", "w").write(json.dumps(evaluation_times, indent=4, ensure_ascii=False))
     except websockets.exceptions.ConnectionClosed as e:
         print(e)
 

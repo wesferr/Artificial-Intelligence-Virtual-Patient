@@ -74,3 +74,4 @@ crashlytics-build.properties
 
 # Ignore font asset files (avoid unnecessary conflicts)
 /[Aa]ssets/Fonts/
+servidor_audio/venv/
