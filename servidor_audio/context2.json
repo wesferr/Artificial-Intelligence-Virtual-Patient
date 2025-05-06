@@ -4,7 +4,7 @@
 	"cenario": "doctors-office",
 	"tem_acompanhante": false,
 	"area": "Hematologia",
-	"descricao": "Paciente do sexo masculino, 64 anos, negro, aposentado, hipertenso controlado, sobrepeso, ex-tabagista (40 maços/ano), vem ao consultório com queixa de falta de ar progressiva há dez meses e desmaios há 1 mês.\nO quadro de dispneia iniciou aos moderados esforços, evoluindo com piora nos últimos três meses, impossibilitando a realização de atividades rotineiras como tomar banho, pentear os cabelos e se vestir. Paciente também relata edema de membros inferiores, fraqueza e dor em região costal (costelas).\nTeve diagnóstico recente de síndrome do túnel do carpo e apresenta “dor cansada” em região lombar e membros inferiores, atribuindo estes sintomas à idade avançada, toma analgésicos comuns (dipirona e paracetamol) que relata melhorarem a dor, porém sem cessá-la.  ",
+	"descricao": "Paciente do sexo masculino, 64 anos, hipertenso controlado, sobrepeso, ex-tabagista (40 maços/ano), vem ao consultório com queixa de falta de ar progressiva há dez meses e desmaios há 1 mês.\nO quadro de dispneia iniciou aos moderados esforços, evoluindo com piora nos últimos três meses, impossibilitando a realização de atividades rotineiras como tomar banho, pentear os cabelos e se vestir. Paciente também relata edema de membros inferiores, fraqueza e dor em região costal (costelas).\nTeve diagnóstico recente de síndrome do túnel do carpo e apresenta “dor cansada” em região lombar e membros inferiores, atribuindo estes sintomas à idade avançada, toma analgésicos comuns (dipirona e paracetamol) que relata melhorarem a dor, porém sem cessá-la.",
 	"paciente": {
 		"uuid": "01a829d6-f16a-4452-9cd6-0d942ab141a0",
 		"tipo": "Homem",
