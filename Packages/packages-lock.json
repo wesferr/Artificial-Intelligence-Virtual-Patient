@@ -1,19 +1,17 @@
 {
   "dependencies": {
     "com.meta.xr.sdk.core": {
-      "version": "74.0.0",
+      "version": "76.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.meta.xr.simulator": {
-      "version": "74.0.0",
+      "version": "76.0.0",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.editorcoroutines": "1.0.0"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.soupday.cc3_unity_tools": {

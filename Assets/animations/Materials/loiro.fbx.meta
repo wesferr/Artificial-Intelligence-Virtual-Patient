@@ -1,9 +1,69 @@
 fileFormatVersion: 2
-guid: 43a218198f5857545bc942cd64738ca0
+guid: 8e13c1c3f09856243a6edc0de4b6b953
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Teeth
+    second: {fileID: 2800000, guid: 5c4d7cbb676366544a19e04fb5726f52, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baseColor
+    second: {fileID: 2800000, guid: fd00a9e5255a56f42a342e0ca91cace4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baseColor.001
+    second: {fileID: 2800000, guid: 59eed5edbdb9cfd49a549a607527447d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baseColor.002
+    second: {fileID: 2800000, guid: 245034bd2896aa44f871b2eda968e886, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baseColor.003
+    second: {fileID: 2800000, guid: b05510aea44508a4fbe978bb04913817, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hair-58-N
+    second: {fileID: 2800000, guid: 0c432437e80eea44eb1d2cd3da6ab07f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pants-casual-01-N
+    second: {fileID: 2800000, guid: 9f43dbde0c409684b8b04c4d8c45a04a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pants-casual-01-black-C
+    second: {fileID: 2800000, guid: 56e26a729365d0440a3d53f3a4c34dac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tennis-casual-02-N
+    second: {fileID: 2800000, guid: 281259d60cfe5c948bfe35881e06e2ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tennis-casual-02.blue-C
+    second: {fileID: 2800000, guid: 2738dca4b8507a64ab47b35c0cdf7eb0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tshirt-01-N
+    second: {fileID: 2800000, guid: 7f846157fe61aae498c8acee997d54c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tshirt-01-white-C
+    second: {fileID: 2800000, guid: 129f11502682fb445b685c9afac0bb81, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -22,7 +82,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -91,13 +151,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

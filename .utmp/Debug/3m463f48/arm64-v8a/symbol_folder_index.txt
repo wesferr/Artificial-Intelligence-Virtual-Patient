@@ -1,0 +1,1 @@
+C:\Users\wesle\Documents\doutorado\AIVH\Library\PramData\AndroidApplicationController\Cache\com.Convai.ConvaiVR\gradle-project\unityLibrary\build\intermediates\cxx\Debug\3m463f48\obj\arm64-v8a

@@ -19,7 +19,7 @@ OUTPUT_FILENAME = "audio_recorded.wav"
 
 class AudioRecorder:
     def __init__(self, master):
-        self.server_uri = "ws://192.168.0.120:8765/ai"
+        self.server_uri = "ws://localhost:8765/ai1"
         self.master = master
         self.master.title("Gravador de Áudio")
         self.audio_queue = asyncio.Queue()
