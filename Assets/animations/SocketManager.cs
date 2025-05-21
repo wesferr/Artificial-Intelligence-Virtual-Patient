@@ -10,9 +10,9 @@ using TMPro;
 
 public class SocketManager : MonoBehaviour
 {
-    private string addoz = "ws://192.168.137.1:8765/oz";
-    private string addai1 = "ws://192.168.137.1:8765/ai1";
-    private string addai2 = "ws://192.168.137.1:8765/ai2";
+    private string addoz = "ws://3.148.195.232:8765/oz";
+    private string addai1 = "ws://3.148.195.232:8765/ai1";
+    private string addai2 = "ws://3.148.195.232:8765/ai2";
     public GameObject canvas;
     private Task receiveOzTask;
     private Task receiveAi1Task;
