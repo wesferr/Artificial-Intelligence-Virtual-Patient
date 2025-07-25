@@ -1,0 +1,221 @@
+{
+	"uuid": "23394c6d-83fe-4192-b913-cd86ede01dba",
+	"nome": "Mieloma múltiplo",
+	"cenario": "doctors-office",
+	"tem_acompanhante": false,
+	"area": "Hematologia",
+	"descricao": "Paciente do sexo masculino, 34 anos, trabalha com computador, hipertenso controlado, ex-tabagista (40 maços/ano), com queixa de falta de ar progressiva há dez meses e desmaios há 1 mês.\nO quadro de dispneia iniciou aos moderados esforços, evoluindo com piora nos últimos três meses, impossibilitando a realização de atividades rotineiras como tomar banho, pentear os cabelos e se vestir. Paciente também relata edema de membros inferiores, fraqueza e dor em região costal (costelas).\nTeve diagnóstico recente de síndrome do túnel do carpo e apresenta “dor cansada” em região lombar e membros inferiores, atribuindo estes sintomas à idade avançada, toma analgésicos comuns (dipirona e paracetamol) que relata melhorarem a dor, porém sem cessá-la.  ",
+	"paciente": {
+		"uuid": "01a829d6-f16a-4452-9cd6-0d942ab141a0",
+		"tipo": "Homem",
+		"nome": "Daniel",
+		"idade": 34,
+		"peso": 76,
+		"altura": 174,
+		"sexo": "Masculino",
+		"faixa_etaria": "Adulto",
+		"naturalidade": "Rio de Janeiro",
+		"nacionalidade": "brasileira",
+		"cor": "Preto",
+		"posicao": "Sentado"
+	},
+	"acompanhante": {},
+	"sinais_vitais": {
+		"temperatura": 36,
+		"frequencia_cardiaca": 72,
+		"pressao_sistolica": 135,
+		"pressao_diastolica": 68,
+		"saturacao_oxigenio": 97,
+		"frequencia_respiratoria": 18
+	},
+	"perguntas_lista": [
+		{
+		"pergunta": "Com o que você trabalha?",
+		"resposta": "Eu trabalho com computador, sou programador."
+		},
+		{
+		"pergunta": "Tem diabetes?",
+		"resposta": "Não"
+		},
+		{
+		"pergunta": "Teve perda de força física?",
+		"resposta": "Sim, me sinto cada vez mais fraco, doutor. Não consigo mais cuidar da minha casa."
+		},
+		{
+		"pergunta": "Toma alguma medicação?",
+		"resposta": "Sim, para a pressão"
+		},
+		{
+		"pergunta": "Está com falta de ar?",
+		"resposta": "Sim doutor, até sentado eu sinto falta de ar"
+		},
+		{
+		"pergunta": "O calendário vacinal está em dia?",
+		"resposta": "Sim, até a do covid."
+		},
+		{
+		"pergunta": "Desmaiou? Ficou desacordado?",
+		"resposta": "Sim, eu me senti tonto e desmaiei"
+		},
+		{
+		"pergunta": "Está com dor? Onde?",
+		"resposta": "Tenho dores nas costelas e na lombar, acho que é pela idade."
+		},
+		{
+		"pergunta": "De 0 a 10 o quanto está doendo?",
+		"resposta": "7"
+		},
+		{
+		"pergunta": "Qual o tipo da dor?",
+		"resposta": "É uma dor de cansaço, como se estivesse pesado."
+		},
+		{
+		"pergunta": "Teve febre?",
+		"resposta": "Não tive"
+		},
+		{
+		"pergunta": "Teve alteração intestinal?",
+		"resposta": "Não tive"
+		},
+		{
+		"pergunta": "Tem alguma coisa que piore a sua dor?",
+		"resposta": "Ela dói o tempo todo, independente do que eu faça"
+		},
+		{
+		"pergunta": "Tem alguma coisa que ajude aliviar a sua dor?",
+		"resposta": "Dipirona e paracetamol, mas a dor não alivia por completo"
+		},
+		{
+		"pergunta": "A apetite está bom?",
+		"resposta": "Não sinto muita fome"
+		},
+		{
+		"pergunta": "Está com tosse?",
+		"resposta": "Não estou."
+		},
+		{
+		"pergunta": "Tem dieta diversificada? Com carne, frutas e verduras?",
+		"resposta": "Sim, gosto muito de comer bem. Tenho até uma horta em casa."
+		},
+		{
+		"pergunta": "Teve alguma perda de peso recente sem fazer regime?",
+		"resposta": "Estou mais magro"
+		},
+		{
+		"pergunta": "Teve quedas recentemente?",
+		"resposta": "Não tive"
+		},
+		{
+		"pergunta": "Você fuma?",
+		"resposta": "Fumei por muitos anos, doutor. Mas parei há 5 anos"
+		},
+		{
+		"pergunta": "Ficou com a pele amarelada?",
+		"resposta": "Não percebi"
+		},
+		{
+		"pergunta": "O senhor se lembra o nome das medicações que toma?",
+		"resposta": "Hidroclorotiazida"
+		},
+		{
+		"pergunta": "Quantos cigarros fumava por dia? E por quantos anos?",
+		"resposta": "Fumava uma carteira dos 14 aos 29 anos."
+		},
+		{
+		"pergunta": "Já fez algum exame de sangue recentemente?",
+		"resposta": "Sim, fiz um hemograma há pouco tempo, mas não entendi muito bem o resultado."
+		},
+		{
+		"pergunta": "Tem sentido formigamentos ou dormência em alguma parte do corpo?",
+		"resposta": "Sim, sinto um formigamento estranho nas mãos, principalmente à noite."
+		},
+		{
+		"pergunta": "Tem notado infecções frequentes ou resfriados que demoram para melhorar?",
+		"resposta": "Sim, tive umas duas infecções urinárias nos últimos meses e uma gripe que demorou muito a passar."
+		},
+		{
+		"pergunta": "Já fez algum exame de imagem, como raio-x ou ressonância, por causa das dores?",
+		"resposta": "Fiz um raio-x da lombar, o médico disse que parecia tudo normal, mas a dor continua."
+		},
+		{
+		"pergunta": "Teve algum episódio recente de sangramento fora do comum, como sangramento nasal ou gengival?",
+		"resposta": "Sim, percebi que minhas gengivas estão sangrando mais fácil quando escovo os dentes."
+		},
+		{
+		"pergunta": "Como está seu sono? Tem conseguido dormir bem?",
+		"resposta": "Não muito bem, acordo várias vezes durante a noite por causa da dor e do desconforto."
+		},
+		{
+		"pergunta": "Você sente dor ao se movimentar ou levantar da cama?",
+		"resposta": "Sim, principalmente na lombar e quando fico muito tempo em pé."
+		},
+		{
+		"pergunta": "Já percebeu que ficou mais baixo ou perdeu altura nos últimos meses?",
+		"resposta": "Sim, me falaram que estou mais curvado, e minhas roupas parecem mais compridas."
+		},
+		{
+		"pergunta": "Está urinando normalmente?",
+		"resposta": "Acho que estou urinando menos que antes."
+		},
+		{
+		"pergunta": "A urina está com cor diferente ou espumando?",
+		"resposta": "Sim, está mais escura e às vezes faz espuma."
+		},
+		{
+		"pergunta": "Sente tontura ou cansaço ao fazer pequenos esforços?",
+		"resposta": "Sim, até subir poucos degraus me deixa exausto."
+		},
+		{
+		"pergunta": "Tem sentido palpitações ou o coração acelerado do nada?",
+		"resposta": "Sim, às vezes parece que o coração vai sair pela boca."
+		},
+		{
+		"pergunta": "Como você está se sentindo emocionalmente com todos esses sintomas?",
+		"resposta": "Cansado e preocupado. Às vezes acho que é só estresse, mas tá difícil."
+		},
+		{
+		"pergunta": "Tem dormido bem?",
+		"resposta": "Não. A dor e as preocupações atrapalham meu sono."
+		},
+		{
+		"pergunta": "Alguém na sua família teve problemas no sangue ou câncer?",
+		"resposta": "Meu tio teve leucemia, mas não sei se tem relação."
+		},
+		{
+		"pergunta": "Já teve alguma alteração nos exames de sangue anteriores, como anemia?",
+		"resposta": "Sim, há um tempo o médico comentou que eu estava com anemia leve."
+		},
+		{
+		"pergunta": "Você fez algum exame de sangue recentemente? O que apareceu?",
+		"resposta": "Sim, estou com anemia, a hemoglobina deu 8 e pouco."
+		},
+		{
+		"pergunta": "Te disseram se a sua função dos rins estava alterada? Como estava a creatinina?",
+		"resposta": "Sim, a creatinina estava alta, mais de 2."
+		},
+		{
+		"pergunta": "Você sabe se apareceu algo no exame de cálcio do sangue?",
+		"resposta": "O médico falou que estava com o cálcio acima do normal."
+		},
+		{
+		"pergunta": "Foi feito um exame chamado eletroforese de proteínas ou imunofixação? O que apareceu?",
+		"resposta": "Sim, apareceu uma proteína alterada chamada pico monoclonal, IgG kappa, acho."
+		},
+		{
+		"pergunta": "Você já fez exame de urina de 24 horas? Deu alguma alteração?",
+		"resposta": "Sim, apareceu proteína na urina. Disseram que era proteína de Bence-Jones."
+		},
+		{
+		"pergunta": "Você já fez algum raio-x ou ressonância por causa das dores nas costas? O que mostrou?",
+		"resposta": "Sim, fiz um raio-x e deu umas lesões nos ossos, pareciam áreas 'comidas' nas vértebras."
+		},
+		{
+		"pergunta": "O médico comentou se sua coluna está com alguma fratura ou perda de altura?",
+		"resposta": "Sim, ele falou que estou com fraturas por compressão e até mais curvado."
+		},
+		{
+		"pergunta": "Você sente dor quando apertam suas costas ou coluna?",
+		"resposta": "Sim, dói bastante."
+		}
+	]
+}

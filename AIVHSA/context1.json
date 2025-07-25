@@ -1,0 +1,165 @@
+{
+	"uuid": "f332cd1d-d7e1-4c81-83c2-896417f3dfd8",
+	"nome": "Menino com febre, dores nos ouvidos e vomitando",
+	"cenario": "doctors-office",
+	"tem_acompanhante": true,
+	"area": "Infectologia",
+	"descricao": "Paciente Fernando, 28 anos, 78kg, com febre, dores nos ouvidos e vomitando.",
+	"paciente": {
+		"uuid": "b98076a4-92b2-4a1f-ad68-1b12bd59591e",
+		"tipo": "Homem",
+		"nome": "Fernando",
+		"idade": 43,
+		"peso": 78,
+		"altura": 169,
+		"sexo": "Masculino",
+		"faixa_etaria": "Adulto",
+		"naturalidade": "São Paulo",
+		"nacionalidade": "Brasileiro",
+		"cor": "Branco",
+		"posicao": "Sentado"
+	},
+	"acompanhante": {},
+	"sinais_vitais": {
+		"temperatura": 36,
+		"frequencia_cardiaca": 100,
+		"pressao_sistolica": 120,
+		"pressao_diastolica": 80,
+		"saturacao_oxigenio": 97,
+		"frequencia_respiratoria": 20
+	},
+	"perguntas_lista": [
+		{
+			"pergunta": "Há quanto tempo está com febre?",
+			"resposta": "Estou com febre a dois dias."
+		  },
+		  {
+			"pergunta": "Com o que você trabalha?",
+			"resposta": "Eu trabalho de caixa de supermercado."
+		  },
+		  {
+			"pergunta": "Tomou algum medicamento para febre? A temperatura diminuiu?",
+			"resposta": "Sim, paracetamol, diminuiu para 38 graus."
+		  },
+		  {
+			"pergunta": "Até que temperatura a febre chegou?",
+			"resposta": "Chegou a 40 graus."
+		  },
+		  {
+			"pergunta": "Tem alergia a algum medicamento?",
+			"resposta": "Não sou alérgico a nenhum remédio."
+		  },
+		  {
+			"pergunta": "Está com dor no ouvido?",
+			"resposta": "Sim, estou."
+		  },
+		  {
+			"pergunta": "Teve diarréia?",
+			"resposta": "Não tive diarréia."
+		  },
+		  {
+			"pergunta": "Tem algum sinal de meningismo?",
+			"resposta": "Não tem sinais de meningismo."
+		  },
+		  {
+			"pergunta": "Está com falta de ar?",
+			"resposta": "Não tive falta de ar."
+		  },
+		  {
+			"pergunta": "Pra que time você torce?",
+			"resposta": "Torço para o corinthians."
+		  },
+		  {
+			"pergunta": "O calendário vacinal está em dia?",
+			"resposta": "Sim, até a do covid."
+		  },
+		  {
+			"pergunta": "Está aceitando liquído?",
+			"resposta": "Sim, bebo água."
+		  },
+		  {
+			"pergunta": "Teve contato com alguém doente?",
+			"resposta": "Não tive contato."
+		  },
+		  {
+			"pergunta": "Está com dor de garganta ao engolir?",
+			"resposta": "Sim, dói bastante quando engulo a saliva."
+		  },
+		  {
+			"pergunta": "Notou placas brancas ou pus na garganta?",
+			"resposta": "Sim, tem umas manchas esbranquiçadas."
+		  },
+		  {
+			"pergunta": "Está com dificuldade para abrir a boca completamente?",
+			"resposta": "Sim, está meio travado e dói."
+		  },
+		  {
+			"pergunta": "Teve calafrios ou suor noturno?",
+			"resposta": "Sim, tive calafrios ontem à noite."
+		  },
+		  {
+			"pergunta": "Já teve episódios parecidos antes?",
+			"resposta": "Não, é a primeira vez que fico assim."
+		  },
+		  {
+			"pergunta": "Sente os gânglios do pescoço aumentados ou doloridos?",
+			"resposta": "Sim, tem umas ínguas que doem ao toque."
+		  },
+		  {
+			"pergunta": "Apresentou náuseas ou vômitos frequentes?",
+			"resposta": "Sim, vomitei duas vezes hoje."
+		  },
+		  {
+			"pergunta": "Está se alimentando bem?",
+			"resposta": "Não estou conseguindo comer direito."
+		  },
+		  {
+			"pergunta": "Está tomando algum antibiótico?",
+			"resposta": "Não, ainda não comecei antibiótico."
+		  },
+		  {
+			"pergunta": "Apresentou algum sangramento nasal ou pelas gengivas?",
+			"resposta": "Não, nenhum sangramento."
+		  },
+		  {
+			"pergunta": "Sente gosto amargo ou metálico na boca?",
+			"resposta": "Sim, estou com um gosto estranho na boca."
+		  },
+		  {
+			"pergunta": "Sente dor ao falar?",
+			"resposta": "Sim, dói mais quando falo alto ou muito."
+		  },
+		  {
+			"pergunta": "Sente dor de cabeça junto com a febre?",
+			"resposta": "Sim, principalmente na parte de trás da cabeça."
+		  },
+		  {
+			"pergunta": "Costuma roncar ou ter apneia do sono?",
+			"resposta": "Sim, minha esposa diz que ronco bastante."
+		  },
+		  {
+			"pergunta": "Tem histórico de infecções de garganta recorrentes?",
+			"resposta": "Sim, tive umas três infecções só esse ano."
+		  },
+		  {
+			"pergunta": "Está com mau hálito?",
+			"resposta": "Sim, percebi um cheiro ruim na boca."
+		  },
+		  {
+			"pergunta": "Teve calafrios com tremores?",
+			"resposta": "Sim, senti o corpo todo tremer de frio."
+		  },
+		  {
+			"pergunta": "Sente fraqueza ou cansaço extremo?",
+			"resposta": "Sim, estou bem cansado, sem forças."
+		  },
+		  {
+			"pergunta": "A dor de ouvido é contínua ou vai e volta?",
+			"resposta": "Ela vai e volta, mas piora à noite."
+		  },
+		  {
+			"pergunta": "Já teve complicações com antibióticos no passado?",
+			"resposta": "Não, sempre tomei sem problemas."
+		  }
+	]
+}

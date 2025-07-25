@@ -19,7 +19,7 @@ OUTPUT_FILENAME = "audio_recorded.wav"
 
 class AudioRecorder:
     def __init__(self, master):
-        self.server_uri = "ws://192.168.0.120:8765/oz"
+        self.server_uri = "ws://<IP HERE>:8765/oz1"
         self.master = master
         self.master.title("Gravador de Áudio")
         self.audio_queue = asyncio.Queue()
@@ -44,9 +44,12 @@ class AudioRecorder:
 
         self.entry = tk.Entry(master, width=50)
         self.entry.pack(pady=10)
+        
+        self.entry.bind("<Return>", lambda event: self.send_message())
 
         self.submit_button = tk.Button(master, text="Enviar", command=self.send_message)
         self.submit_button.pack(pady=10)
+        
         self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     # Adicione o método send_message na classe
@@ -54,7 +57,9 @@ class AudioRecorder:
         """Envia a mensagem do TextBox para o servidor WebSocket."""
         message = self.entry.get()
         if message and self.websocket:  # Verifica se há mensagem e conexão WebSocket
+            asyncio.run_coroutine_threadsafe(self.websocket.send(b""), self.loop)
             asyncio.run_coroutine_threadsafe(self.websocket.send(message), self.loop)
+            print(f"Mensagem enviada: {message}")
             self.entry.delete(0, tk.END)  # Limpa o campo de texto
         else:
             print("Não foi possível enviar a mensagem. Verifique a conexão.")
@@ -68,6 +73,7 @@ class AudioRecorder:
         """Estabelece conexão com o servidor WebSocket."""
         try:
             self.websocket = await websockets.connect(self.server_uri, ping_interval=20, ping_timeout=20)
+            print("Conectado ao servidor WebSocket.")
         except Exception as e:
             print(f"Erro ao conectar ao WebSocket: {e}")
 
@@ -90,6 +96,7 @@ class AudioRecorder:
         print("Aguardando áudio do servidor...")
         while self.is_running:
             try:
+                print("try")
                 data = await self.websocket.recv()
                 print("Áudio recebido do servidor")
                 await self.audio_queue.put(data)  # Adiciona áudio na fila assíncrona

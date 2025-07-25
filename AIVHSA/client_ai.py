@@ -14,12 +14,13 @@ if platform.system()=='Windows':
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 24000
+
 CHUNK = 1024
 OUTPUT_FILENAME = "audio_recorded.wav"
 
 class AudioRecorder:
     def __init__(self, master):
-        self.server_uri = "ws://localhost:8765/ai1"
+        self.server_uri = "ws://<IP HERE>:8765/ai2"
         self.master = master
         self.master.title("Gravador de Áudio")
         self.audio_queue = asyncio.Queue()
